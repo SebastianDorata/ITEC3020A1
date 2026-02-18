@@ -94,8 +94,16 @@
                                 </svg>
                             </button>
                         </div>
-                        <h2>Item Name</h2>
-                        <p>Price</p>
+                        <div class="product-info">
+                            <h5 class="product-title">Forza Horizon 6</h5>
+                            <p class="product-description">Standard Edition</p>
+                            <div class="product-footer">
+                                <span class="product-price">$89.99</span>
+                                <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+
+
                 </div>
                 <div class = "dealCards">
                     <div class = "dealImgs img3">
@@ -105,8 +113,14 @@
                             </svg>
                         </button>
                     </div>
-                    <h2>Item Name</h2>
-                    <p>Price</p>
+                    <div class="product-info">
+                        <h5 class="product-title">Mario Kart 8</h5>
+                        <p class="product-description">Nintendo Switch Edition</p>
+                        <div class="product-footer">
+                            <span class="product-price">$69.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
 
                 </div>
                 <div class = "dealCards">
@@ -117,8 +131,14 @@
                                 </svg>
                             </button>
                         </div>
-                    <h2>Item Name</h2>
-                    <p>Price</p>
+                    <div class="product-info">
+                        <h5 class="product-title">Hogwarts Legacy</h5>
+                        <p class="product-description">Deluxe Edition</p>
+                        <div class="product-footer">
+                            <span class="product-price">$44.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -127,8 +147,13 @@
     <h1>About</h1>
   </div>
         <div id="Wishlist" class="page">
-    <h1>Wishlist</h1>
-  </div>
+            <h1>Wishlist</h1>
+            <div id="wishlist-items" class="container"></div>
+        </div>
+
+
+
+
         <div id="MyCart" class="page">
                 <h2>Your Cart</h2>
 
@@ -149,10 +174,14 @@
             </div>
             <div id="cart-items"></div>
             <div class="text-end">
-                <h4>Total: <span id="cart-total">$0.00</span></h4>
-                <div>
-                    <a href="#" onclick="showPage('Home')">Continue Shopping</a>
-                    <button onclick="processCheckout()">Proceed to Checkout</button>
+                <div class="text-end">
+                    <p>Subtotal: <span id="cart-subtotal">$0.00</span></p>
+                    <p>Tax (13%): <span id="cart-tax">$0.00</span></p>
+                    <h4>Total: <span id="cart-total">$0.00</span></h4>
+                    <div>
+                        <a href="#" onclick="showPage('Home')">Continue Shopping</a>
+                        <button onclick="processCheckout()">Proceed to Checkout</button>
+                    </div>
                 </div>
             </div>
         </div>

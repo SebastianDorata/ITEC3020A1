@@ -1,92 +1,54 @@
 // Current page functionality
 function showPage(pageId) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById(pageId).classList.add('active');
-}
-// Wishlist functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const favoriteButtons = document.querySelectorAll('.favorite-btn');
-
-    favoriteButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            button.classList.toggle('favorited');
-
-
-            const isFavorited = button.classList.contains('favorited');
-            showTooltip(button, isFavorited ? 'Added to wishlist!' : 'Removed from wishlist');
-        });
-    });
-});
-
-function showTooltip(button, message) {
-
-    const tooltip = document.createElement('div');
-    tooltip.className = 'wishlist-tooltip';
-    tooltip.textContent = message;
-
-
-    button.appendChild(tooltip);
-
-
-    setTimeout(() => {
-        tooltip.remove();
-    }, 2000);
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
 }
 
-
+/////////////////////////////////////////////////////////
 // Cart functionality
 class Cart {
     constructor() {
-        this.cart = JSON.parse(localStorage.getItem('cart')) || [];
-        this.init();
+        this.cart = Cart.getCart();
     }
-    init() {
-        this.setupAddToCartButtons();
-        this.updateCartCount();
-    }
-    setupAddToCartButtons() {
-        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                this.addToCart(e.target);
-            });
-        });
-    }
+
     addToCart(button) {
         const productCard = button.closest('.dealCards');
+        if (!productCard) return;
+
         const productTitle = productCard.querySelector('.product-title').textContent;
         const productPrice = productCard.querySelector('.product-price').textContent;
         const productDescription = productCard.querySelector('.product-description').textContent;
+        const dealImgs = productCard.querySelector('.dealImgs');
+        const productImage = dealImgs ? dealImgs.classList[1] : '';
+
+        // Always read fresh from localStorage before modifying
+        this.cart = Cart.getCart();
 
         const product = {
             title: productTitle,
             price: productPrice,
-            description: productDescription
+            description: productDescription,
+            imageClass: productImage
         };
 
-        const existingProductIndex = this.cart.findIndex(item => item.title === product.title);
-        if (existingProductIndex > -1) {
-            this.cart[existingProductIndex].quantity = (this.cart[existingProductIndex].quantity || 1) + 1;
+        const existingIndex = this.cart.findIndex(item => item.title === product.title);
+        if (existingIndex > -1) {
+            this.cart[existingIndex].quantity = (this.cart[existingIndex].quantity || 1) + 1;
         } else {
             product.quantity = 1;
             this.cart.push(product);
         }
 
         this.saveCart();
-        this.updateCartCount();
+        updateCartCountInHeader();
+        displayCartItems();
         this.showAddToCartConfirmation(productTitle);
     }
+
     saveCart() {
         localStorage.setItem('cart', JSON.stringify(this.cart));
     }
-    updateCartCount() {
-        const cartBadge = document.querySelector('.cart-badge');
-        if (cartBadge) {
-            const totalItems = this.cart.reduce((total, item) => total + (item.quantity || 1), 0);
-            cartBadge.textContent = totalItems;
-            cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
-        }
-    }
+
     showAddToCartConfirmation(productTitle) {
         const toast = document.createElement('div');
         toast.className = 'cart-toast';
@@ -95,62 +57,184 @@ class Cart {
         setTimeout(() => {
             toast.style.animation = 'slideOut 0.3s ease';
             setTimeout(() => {
-                if (toast.parentNode) {
-                    document.body.removeChild(toast);
-                }
+                if (toast.parentNode) document.body.removeChild(toast);
             }, 300);
         }, 3000);
     }
+
     static getCart() {
         return JSON.parse(localStorage.getItem('cart')) || [];
     }
+
     static clearCart() {
         localStorage.removeItem('cart');
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    new Cart();
-});
+/////////////////////////////////////////////////////////
+// Wishlist functionality
+class Wishlist {
+    constructor() {
+        this.wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        this.setupFavoriteButtons();
+        this.updateWishlistDisplay();
+    }
 
+    setupFavoriteButtons() {
+        document.querySelectorAll('.favorite-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                this.toggleWishlist(e.currentTarget);
+            });
+        });
+    }
 
+    toggleWishlist(button) {
+        const productCard = button.closest('.dealCards');
+        if (!productCard) return;
 
-// Checkout functionality
+        const productTitle = productCard.querySelector('.product-title').textContent;
+        const productPrice = productCard.querySelector('.product-price').textContent;
+        const descEl = productCard.querySelector('.product-description');
+        const productDescription = descEl ? descEl.textContent : '';
+        const dealImgs = productCard.querySelector('.dealImgs');
+        const productImage = dealImgs ? dealImgs.classList[1] : '';
 
-document.addEventListener('DOMContentLoaded', function() {
-    displayCartItems();
+        const product = {
+            title: productTitle,
+            price: productPrice,
+            description: productDescription,
+            imageClass: productImage
+        };
 
-    window.addEventListener('storage', function(e) {
-        if (e.key === 'cart') {
-            displayCartItems();
+        const existingIndex = this.wishlist.findIndex(item => item.title === product.title);
+        if (existingIndex > -1) {
+            this.wishlist.splice(existingIndex, 1);
+            button.classList.remove('favorited');
+            showTooltip(button, 'Removed from wishlist');
+        } else {
+            this.wishlist.push(product);
+            button.classList.add('favorited');
+            showTooltip(button, 'Added to wishlist!');
         }
-    });
-});
 
+        localStorage.setItem('wishlist', JSON.stringify(this.wishlist));
+        this.updateWishlistDisplay();
+    }
+
+    updateWishlistDisplay() {
+        const container = document.getElementById('wishlist-items');
+        if (!container) return;
+
+        if (this.wishlist.length === 0) {
+            container.innerHTML = '<p>No items in your wishlist yet!</p>';
+            return;
+        }
+
+        container.innerHTML = this.wishlist.map((item, index) => `
+            <div class="dealCards">
+                <div class="dealImgs ${item.imageClass}"></div>
+                <div class="product-info">
+                    <h5 class="product-title">${item.title}</h5>
+                    <p class="product-description">${item.description}</p>
+                    <div class="product-footer">
+                        <span class="product-price">${item.price}</span>
+                        <button class="btn btn-primary wishlist-add-to-cart" data-index="${index}">Add to Cart</button>
+                        <button class="btn btn-danger wishlist-remove-btn" data-index="${index}">Remove</button>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        // Add to cart from wishlist button
+        container.querySelectorAll('.wishlist-add-to-cart').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const index = e.target.dataset.index;
+                const item = this.wishlist[index];
+                const cart = Cart.getCart();
+                const existingIndex = cart.findIndex(c => c.title === item.title);
+                if (existingIndex > -1) {
+                    cart[existingIndex].quantity = (cart[existingIndex].quantity || 1) + 1;
+                } else {
+                    cart.push({ ...item, quantity: 1 });
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCountInHeader();
+                displayCartItems();
+                const toast = document.createElement('div');
+                toast.className = 'cart-toast';
+                toast.textContent = `✓ Added ${item.title} to cart!`;
+                document.body.appendChild(toast);
+                setTimeout(() => {
+                    toast.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => { if (toast.parentNode) document.body.removeChild(toast); }, 300);
+                }, 3000);
+            });
+        });
+
+        // Remove from wishlist button
+        container.querySelectorAll('.wishlist-remove-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const index = parseInt(e.target.dataset.index);
+                this.wishlist.splice(index, 1);
+                localStorage.setItem('wishlist', JSON.stringify(this.wishlist));
+                this.updateWishlistDisplay();
+            });
+        });
+    }
+}
+
+function showTooltip(button, message) {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'wishlist-tooltip';
+    tooltip.textContent = message;
+    button.appendChild(tooltip);
+    setTimeout(() => tooltip.remove(), 2000);
+}
+
+/////////////////////////////////////////////////////////
+// Cart items counter
+function updateCartCountInHeader() {
+    const cartBadge = document.querySelector('.cart-badge');
+    if (cartBadge) {
+        const cartItems = Cart.getCart();
+        const totalItems = cartItems.reduce((total, item) => total + (item.quantity || 1), 0);
+        cartBadge.textContent = totalItems;
+        cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
+    }
+}
+
+/////////////////////////////////////////////////////////
+// Cart display
 function displayCartItems() {
     const cartItems = Cart.getCart();
     const cartContainer = document.getElementById('cart-items');
     const totalElement = document.getElementById('cart-total');
+    const subtotalElement = document.getElementById('cart-subtotal');
+    const taxElement = document.getElementById('cart-tax');
     const emptyCartMessage = document.getElementById('empty-cart-message');
     const cartContent = document.getElementById('cart-content');
+
+    if (!cartContainer) return;
 
     if (cartItems.length === 0) {
         if (emptyCartMessage) emptyCartMessage.style.display = 'block';
         if (cartContent) cartContent.style.display = 'none';
+        updateCartCountInHeader();
         return;
     }
 
     if (emptyCartMessage) emptyCartMessage.style.display = 'none';
     if (cartContent) cartContent.style.display = 'block';
 
-    let total = 0;
+    let subtotal = 0;
     cartContainer.innerHTML = cartItems.map((item, index) => {
         const price = parseFloat(item.price.replace('$', ''));
         const itemTotal = price * (item.quantity || 1);
-        total += itemTotal;
+        subtotal += itemTotal;
 
         return `
             <div class="cart-item" data-index="${index}">
+                <div class="dealImgs ${item.imageClass}" style="width:100px; height:100px; border-radius:8px; flex-shrink:0;"></div>
                 <div class="cart-item-content">
                     <h6>${item.title}</h6>
                     <p>${item.description}</p>
@@ -173,6 +257,11 @@ function displayCartItems() {
         `;
     }).join('');
 
+    const tax = subtotal * 0.13;
+    const total = subtotal + tax;
+
+    if (subtotalElement) subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+    if (taxElement) taxElement.textContent = `$${tax.toFixed(2)}`;
     if (totalElement) totalElement.textContent = `$${total.toFixed(2)}`;
 }
 
@@ -182,34 +271,23 @@ function removeFromCart(index) {
         cartItems.splice(index, 1);
         localStorage.setItem('cart', JSON.stringify(cartItems));
         displayCartItems();
-        showRemovalConfirmation();
         updateCartCountInHeader();
+        showRemovalConfirmation();
     }
 }
 
 function updateQuantity(index, change) {
     const cartItems = Cart.getCart();
     if (index >= 0 && index < cartItems.length) {
-        const item = cartItems[index];
-        const newQuantity = (item.quantity || 1) + change;
+        const newQuantity = (cartItems[index].quantity || 1) + change;
         if (newQuantity < 1) {
             removeFromCart(index);
             return;
         }
-        item.quantity = newQuantity;
+        cartItems[index].quantity = newQuantity;
         localStorage.setItem('cart', JSON.stringify(cartItems));
         displayCartItems();
         updateCartCountInHeader();
-    }
-}
-
-function updateCartCountInHeader() {
-    const cartBadge = document.querySelector('.cart-badge');
-    if (cartBadge) {
-        const cartItems = Cart.getCart();
-        const totalItems = cartItems.reduce((total, item) => total + (item.quantity || 1), 0);
-        cartBadge.textContent = totalItems;
-        cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
     }
 }
 
@@ -222,9 +300,7 @@ function showRemovalConfirmation() {
     setTimeout(() => {
         toast.style.animation = 'slideOut 0.3s ease';
         setTimeout(() => {
-            if (toast.parentNode) {
-                document.body.removeChild(toast);
-            }
+            if (toast.parentNode) document.body.removeChild(toast);
         }, 300);
     }, 3000);
 }
@@ -246,3 +322,25 @@ function clearCart() {
         showRemovalConfirmation();
     }
 }
+
+/////////////////////////////////////////////////////////
+document.addEventListener('DOMContentLoaded', function () {
+    window.cartInstance = new Cart();
+    window.wishlistInstance = new Wishlist();
+
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            cartInstance.addToCart(e.target);
+        });
+    });
+
+    displayCartItems();
+    updateCartCountInHeader();
+
+    window.addEventListener('storage', function (e) {
+        if (e.key === 'cart') {
+            displayCartItems();
+            updateCartCountInHeader();
+        }
+    });
+});
