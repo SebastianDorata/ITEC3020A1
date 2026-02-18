@@ -1,3 +1,68 @@
-.title {
-    color: green;
+*{
+    text-decoration: none;
+    list-style:  none;
+}
+.navbar{
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: darkgreen
+}
+.navbar a{
+    color: White;
+}
+.navbar .storeName{
+    font-size: 4em;
+    font-weight: bold;
+}
+.navbar .nav-links ul{
+    overflow: hidden;
+    display: flex;
+    font-size: 2em;
+}
+.navbar .nav-links ul li{
+    margin: 0 40px;
+}
+.navbar .nav-links ul li a:hover{
+    color: red;
+}
+
+
+.carousel{
+    margin: 100px auto;
+    width: 90%;
+    border: 5px solid red;
+    display: flex;
+    overflow-x: auto;
+}
+.carousel::-webkit-scrollbar{
+    display:none;
+}
+
+.group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1em;
+    animation: spin 15s infinite linear;
+    padding-right: 1em;
+}
+
+.card{
+    flex: 0 0 5em;
+    height: 5em;
+    padding: 1em;
+    background: #159954;
+    font-size: 3em;
+    border-radius: .2em;
+    text-align:center;
+    align-content: center;
+}
+
+@keyframes spin{
+    from{ translate: 0;}
+    to { translate: -100%}
 }
