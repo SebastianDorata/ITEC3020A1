@@ -10,6 +10,7 @@
 
         <nav class= "navbar">
             <a href = "#" class = "storeName">Game Store</a>
+            <div class = "navRight">
             <div class = "nav-links">
                 <ul>
                     <li><a href="#" onclick="showPage('Home')">Home</a></li>
@@ -19,7 +20,23 @@
                     <li><a href="#" onclick="showPage('Wishlist')">Wishlist</a></li>
                 </ul>
             </div>
+
+            <div class="cart-container">
+                <a href="#" onclick="showPage('MyCart')" class="cart-icon-link">
+                    <div class="cart-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="cart-icon" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                        <span class="cart-badge">0</span>
+                    </div>
+
+                </a>
+
+            </div>
+            </div>
         </nav>
+
+
 
         <div id="Home" class="page active">
         <h1>Home</h1>
@@ -47,8 +64,6 @@
         <div id="Games" class="page">
     <h1>Games</h1>
   </div>
-
-
         <div id="Deals" class="page">
     <h1>Available for Preorder now</h1>
 
@@ -60,9 +75,15 @@
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                                 </svg>
                             </button>
-                        </div>
-                        <h2>Item Name</h2>
-                        <p>Price</p>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Spider-Man 2</h5>
+                        <p class="product-description">Digital Deluxe Edition for PlayStation 5</p>
+                            <div class="product-footer">
+                                <span class="product-price">$39.99</span>
+                                <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            </div>
+                    </div>
 
                 </div>
                 <div class = "dealCards">
@@ -91,26 +112,51 @@
                 <div class = "dealCards">
                     <div class = "dealImgs img4">
                         <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                              <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                            </svg>
-                        </button></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                </svg>
+                            </button>
+                        </div>
                     <h2>Item Name</h2>
                     <p>Price</p>
 
                 </div>
             </div>
   </div>
-
-
-
         <div id="About" class="page">
     <h1>About</h1>
   </div>
         <div id="Wishlist" class="page">
     <h1>Wishlist</h1>
   </div>
+        <div id="MyCart" class="page">
+                <h2>Your Cart</h2>
 
+        <div id="empty-cart-message" style="display: none;">
+            <div class="empty-cart">
+                <h4>Your cart is empty</h4>
+                <p>Add some items to get started!</p>
+                <a href="#" onclick="showPage('Home')">Continue Shopping</a>
+            </div>
+        </div>
+
+        <div id="cart-content">
+            <div>
+                <h4>Cart Items</h4>
+                <button onclick="clearCart()">
+                    Clear Cart
+                </button>
+            </div>
+            <div id="cart-items"></div>
+            <div class="text-end">
+                <h4>Total: <span id="cart-total">$0.00</span></h4>
+                <div>
+                    <a href="#" onclick="showPage('Home')">Continue Shopping</a>
+                    <button onclick="processCheckout()">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+</div>
 
 
 
