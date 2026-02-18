@@ -78,7 +78,7 @@ body{
     to { translate: -100%}
 }
 
-/* Deals*/
+/*////////////// Deals/////////////////////*/
 #Deals{
     background-image: url(GameImgs/DealsPg.png);
     background-size: cover;
@@ -96,6 +96,93 @@ body{
     z-index: 1;
     position: relative;
 }
+/*Product styling*/
+.container{
+    display: flex;
+    justify-content: center;
+}
+.dealCards{
+    background: white;
+    border-radius: 15px;
+    width: 90%;
+    margin: 10px;
+    margin-top: 40em;
+}
+.dealImgs{
+    border-radius: 15px 15px 0 0;
+    background-size: cover;
+    height: 33em;
+    margin-bottom: 15px;
+}
+.img1{
+    background-image: url(/GameImgs/Spiderman2.jpg);
+    background-position: 50% center;
+}
+.img2{
+    background-image: url(/GameImgs/DealsPg1.jpg);
+    background-position: 97%;
+    background-size: 155%;
+    background-repeat: no-repeat;
+}
+.img3{
+    background-image: url(/GameImgs/Mariokart8.png);
+    background-position: -10% 45%;
+}
+.img4{
+    background-image: url(/GameImgs/hogwarts.jpg);
+
+}
+/*Add to wishlist button*/
+.favorite-btn {
+    position: absolute;
+    top: 3px;
+    right: -565px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.favorite-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+.star-icon {
+    color: #6c757d; /* Gray outline star */
+}
+.favorite-btn.favorited .star-icon {
+    color: #ffc107; /* Gold filled star */
+}
+.wishlist-tooltip {
+   position: absolute;
+    top: 3px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    white-space: normal;
+    max-width: 150px;
+    animation: fadeInOut 2s ease-in-out;
+    pointer-events: none;
+    z-index: 1000;
+}
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+    15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+}
+
+
+
+
 
 
 
