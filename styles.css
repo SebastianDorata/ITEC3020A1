@@ -41,7 +41,6 @@
 .carousel::-webkit-scrollbar{
     display:none;
 }
-
 .group{
     display: flex;
     align-items: center;
@@ -50,7 +49,6 @@
     animation: spin 15s infinite linear;
     padding-right: 1em;
 }
-
 .card{
     flex: 0 0 5em;
     height: 5em;
@@ -61,8 +59,19 @@
     text-align:center;
     align-content: center;
 }
-
 @keyframes spin{
     from{ translate: 0;}
     to { translate: -100%}
+}
+
+body{
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+}
+
+
+footer{
+
+    margin-top: auto;
 }
