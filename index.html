@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <title>Title</title>
         <link rel="stylesheet" href="styles.css" />
-        <script src="script.js"></script>
+
     </head>
     <body>
 
@@ -12,15 +12,18 @@
             <a href = "#" class = "storeName">Game Store</a>
             <div class = "nav-links">
                 <ul>
-                    <li><a>Home</a></li>
-                    <li><a>About</a></li>
-                    <li><a>Help</a></li>
-                    <li><a>Cart</a></li>
+                    <li><a href="#" onclick="showPage('Home')">Home</a></li>
+                    <li><a href="#" onclick="showPage('Games')">Games</a></li>
+                    <li><a href="#" onclick="showPage('Deals')">Deals</a></li>
+                    <li><a href="#" onclick="showPage('About')">About</a></li>
+                    <li><a href="#" onclick="showPage('Wishlist')">Wishlist</a></li>
                 </ul>
             </div>
         </nav>
 
-        <div class = "carousel">
+        <div id="Home" class="page active">
+        <h1>Home</h1>
+                    <div class = "carousel">
             <div class = "group">
                 <div class = "card">1</div>
                 <div class = "card">2</div>
@@ -39,7 +42,23 @@
             </div>
         </div>
 
-    <footer>
+
+         </div>
+
+        <div id="Games" class="page">
+    <h1>Games</h1>
+  </div>
+        <div id="Deals" class="page">
+    <h1>Deals</h1>
+  </div>
+        <div id="About" class="page">
+    <h1>About</h1>
+  </div>
+        <div id="Wishlist" class="page">
+    <h1>Wishlist</h1>
+  </div>
+
+        <footer>
         <h1> Sign up for our newsletter!</h1>
 
         <form>
@@ -58,7 +77,6 @@
 
      </footer>
 
-
-
+        <script src="script.js"></script>
     </body>
 </html>

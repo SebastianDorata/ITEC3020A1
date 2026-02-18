@@ -2,6 +2,18 @@
     text-decoration: none;
     list-style:  none;
 }
+body{
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+}
+.page {
+  display: none;
+}
+.page.active {
+  display: block;
+}
+
 .navbar{
     padding: 50px;
     display: flex;
@@ -64,14 +76,9 @@
     to { translate: -100%}
 }
 
-body{
-    min-height: 100vh;
-    display:flex;
-    flex-direction: column;
-}
+
 
 
 footer{
-
     margin-top: auto;
 }
