@@ -1,9 +1,11 @@
+/*General design*/
 *{
     text-decoration: none;
     list-style:  none;
 }
 body{
     min-height: 100vh;
+    margin: 0;
     display:flex;
     flex-direction: column;
 }
@@ -13,7 +15,6 @@ body{
 .page.active {
   display: block;
 }
-
 .navbar{
     padding: 50px;
     display: flex;
@@ -43,6 +44,7 @@ body{
 }
 
 
+/* home*/
 .carousel{
     margin: 100px auto;
     width: 90%;
@@ -74,6 +76,25 @@ body{
 @keyframes spin{
     from{ translate: 0;}
     to { translate: -100%}
+}
+
+/* Deals*/
+#Deals{
+    background-image: url(GameImgs/DealsPg.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 100vh;
+}
+#Deals::before{
+    content: ' ';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.2);
+}
+#Deals *{
+    z-index: 1;
+    position: relative;
 }
 
 
