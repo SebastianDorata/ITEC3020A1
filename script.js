@@ -358,7 +358,12 @@ function formatExpiry(input) {
         input.value = input.value.substring(0, 2) + '/' + input.value.substring(2);
     }
 }
-
+function validateCardNumber(input) { // If the users chooses not to type spaces. This function stops them from typing >16 numbers.
+    input.value = input.value.replace(/[^0-9 ]/g, '');
+    if (input.value.replace(/\s/g, '').length > 16) {
+        input.value = input.value.slice(0, -1);
+    }
+}
 
 
 function submitCheckout() {

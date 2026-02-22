@@ -202,7 +202,7 @@
             <input type="text" id="card-name" placeholder="John Doe" required>
 
             <label for="card-number">Card Number:</label>
-            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required oninput="this.value = this.value.replace(/[^0-9 ]/g, '')">
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required oninput = "validateCardNumber(this)" >
                                                                                                         <!-- Used to delete user inputs that are not numbers. 19 char Keeps spaces for chunking 16dig card  -->
 
             <label for="expiry">Expiry Date:</label>
