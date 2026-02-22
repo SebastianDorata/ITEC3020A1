@@ -150,10 +150,6 @@
             <h1>Wishlist</h1>
             <div id="wishlist-items" class="container"></div>
         </div>
-
-
-
-
         <div id="MyCart" class="page">
                 <h2>Your Cart</h2>
 
@@ -180,13 +176,16 @@
                     <h4>Total: <span id="cart-total">$0.00</span></h4>
                     <div>
                         <a href="#" onclick="showPage('Home')">Continue Shopping</a>
-                        <button onclick="processCheckout()">Proceed to Checkout</button>
+                        <button onclick="showPage('Checkout'); displayCheckoutSummary()">Proceed to Checkout</button>
                     </div>
                 </div>
             </div>
         </div>
 </div>
-
+        <div id="Checkout" class="page">
+            <h1>About checkout info</h1>
+             <div id="checkout-summary"></div>
+        </div>
 
 
 

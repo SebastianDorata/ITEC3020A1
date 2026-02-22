@@ -305,14 +305,22 @@ function showRemovalConfirmation() {
     }, 3000);
 }
 
-function processCheckout() {
-    const cartItems = Cart.getCart();
-    if (cartItems.length === 0) {
-        alert('Your cart is empty!');
-        return;
-    }
-    alert('Proceeding to checkout! This would integrate with your payment system.');
-}
+// To be sorted out later.
+//
+// Remove comment to have confirmation before going to the checkout page again.
+//
+//
+// Direct page nav to checkout, Alert no longer called.
+//
+//
+//function processCheckout() {
+//    const cartItems = Cart.getCart();
+//    if (cartItems.length === 0) {
+//        alert('Your cart is empty!');
+//        return;
+//    }
+//    alert('Proceeding to checkout! This would integrate with your payment system.');
+//}
 
 function clearCart() {
     if (confirm('Are you sure you want to clear your entire cart?')) {
@@ -322,6 +330,28 @@ function clearCart() {
         showRemovalConfirmation();
     }
 }
+function displayCheckoutSummary() {
+    const cartItems = Cart.getCart();
+    const checkoutContainer = document.getElementById('checkout-summary');
+    if (!checkoutContainer) return;
+
+    let subtotal = 0;
+    cartItems.forEach(item => {
+        const price = parseFloat(item.price.replace('$', ''));
+        subtotal += price * (item.quantity || 1);
+    });
+
+    const tax = subtotal * 0.13;
+    const total = subtotal + tax;
+
+    checkoutContainer.innerHTML = `
+        <p>Subtotal: $${subtotal.toFixed(2)}</p>
+        <p>Tax (13%): $${tax.toFixed(2)}</p>
+        <h4>Total: $${total.toFixed(2)}</h4>
+    `;
+}
+
+
 
 /////////////////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', function () {
