@@ -182,9 +182,38 @@
             </div>
         </div>
 </div>
+
+
+
+
+
+
         <div id="Checkout" class="page">
+
             <h1>About checkout info</h1>
              <div id="checkout-summary"></div>
+
+            <form id = "Checkout-form">
+
+            <label for="email">Email:</label>
+            <input type="email" id="checkout-email" placeholder="example@email.com" required>
+
+            <label for="card-name">Name on Card:</label>
+            <input type="text" id="card-name" placeholder="John Doe" required>
+
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required oninput="this.value = this.value.replace(/[^0-9 ]/g, '')">
+                                                                                                        <!-- Used to delete user inputs that are not numbers. 19 char Keeps spaces for chunking 16dig card  -->
+
+            <label for="expiry">Expiry Date:</label>
+            <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required oninput="formatExpiry(this)">
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" placeholder="123" maxlength="3" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                                                                        <!-- Used to delete user inputs that are not numbers.-->
+            <button type="button" onclick="submitCheckout()">Place Order</button>
+            </form>
+
         </div>
 
 
