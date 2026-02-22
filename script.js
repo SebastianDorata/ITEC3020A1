@@ -350,7 +350,39 @@ function displayCheckoutSummary() {
         <h4>Total: $${total.toFixed(2)}</h4>
     `;
 }
+/////////////////////////////////////////////////////////
+// User form checkout page functionality
+function formatExpiry(input) {
+    input.value = input.value.replace(/[^0-9]/g, '');
+    if (input.value.length >= 2) { // automatically add a slash after the first two numbers
+        input.value = input.value.substring(0, 2) + '/' + input.value.substring(2);
+    }
+}
 
+
+
+function submitCheckout() {
+    const email = document.getElementById('checkout-email').value;
+    const cardName = document.getElementById('card-name').value;
+    const cardNumber = document.getElementById('card-number').value;
+    const expiry = document.getElementById('expiry').value;
+    const cvv = document.getElementById('cvv').value;
+
+
+    if (!email || !cardName || !cardNumber || !expiry || !cvv) {
+        alert('Please fill in all fields.');
+        return;
+    }
+    const cardNumberStripped = cardNumber.replace(/\s/g, ''); //Removes the spaces before counting to 16
+    if (cardNumberStripped.length !== 16) {
+    alert('Card number must be 16 digits.');
+    return;
+    }
+    if (cvv.length !== 3) {
+        alert('CVV must be 3 digits.');
+        return;
+    }
+}
 
 
 /////////////////////////////////////////////////////////
