@@ -1,0 +1,1 @@
+Add spinner to the checkout page.

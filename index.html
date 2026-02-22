@@ -182,12 +182,6 @@
             </div>
         </div>
 </div>
-
-
-
-
-
-
         <div id="Checkout" class="page">
 
             <h1>About checkout info</h1>
@@ -211,11 +205,32 @@
             <label for="cvv">CVV:</label>
             <input type="text" id="cvv" placeholder="123" maxlength="3" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                                                                                         <!-- Used to delete user inputs that are not numbers.-->
-            <button type="button" onclick="submitCheckout()">Place Order</button>
+            <button type="button" onclick="showPage('Reciept');submitCheckout()">Place Order</button>
             </form>
 
         </div>
 
+
+
+        <div id="Reciept" class = "page">
+            <div id="receipt-container">
+                <h1>Success!</h1>
+                <h4>Here are your order details</h4>
+                    <div class="receipt-details">
+                        <p><strong>Order Number:</strong> <span id="receipt-order-number"></span></p>
+                        <p><strong>Order Date:</strong> <span id="receipt-order-date"></span></p>
+                        <p><strong>Name:</strong> <span id="receipt-name"></span></p>
+                        <p><strong>Email:</strong> <span id="receipt-email"></span></p>
+                    </div>
+                <h5>Order Summary</h5>
+                <div id="receipt-items"></div>
+                <div id="receipt-totals"></div>
+                <div class="receipt-buttons">
+                    <button onclick="showPage('Home')">Continue Shopping</button>
+                    <button onclick="window.print()">Print Receipt</button>
+                </div>
+            </div>
+        </div>
 
 
 

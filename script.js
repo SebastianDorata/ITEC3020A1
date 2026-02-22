@@ -387,8 +387,66 @@ function submitCheckout() {
         alert('CVV must be 3 digits.');
         return;
     }
+    showReceipt(email, cardName);
+    //Todo list. Add spinner later.
 }
 
+/////////////////////////////////////////////////////////
+// Receipt page functionality
+function showReceipt(email, cardName) {
+    const cartItems = Cart.getCart();
+
+
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const randomFour = String(Math.floor(1000 + Math.random() * 9000));
+    const orderNumber = `ORD-${year}${month}${day}-${randomFour}`;
+
+
+    const orderDate = `${day}/${month}/${year}`;
+
+    let subtotal = 0;
+    document.getElementById('receipt-items').innerHTML = cartItems.map(item => {
+        const price = parseFloat(item.price.replace('$', ''));
+        const itemTotal = price * (item.quantity || 1);
+        subtotal += itemTotal;
+        return `
+            <div class="receipt-item">
+                <span>${item.title} x${item.quantity || 1}</span>
+                <span>$${itemTotal.toFixed(2)}</span>
+            </div>
+        `;
+    }).join('');
+
+    const tax = subtotal * 0.13;
+    const total = subtotal + tax;
+
+    document.getElementById('receipt-name').textContent = cardName;
+    document.getElementById('receipt-email').textContent = email;
+    document.getElementById('receipt-order-number').textContent = orderNumber;
+    document.getElementById('receipt-order-date').textContent = orderDate;
+
+
+    document.getElementById('receipt-totals').innerHTML =
+        `<div class="receipt-item">
+            <span>Subtotal:</span>
+            <span>$${subtotal.toFixed(2)}</span>
+        </div>
+        <div class="receipt-item">
+            <span>Tax (13%):</span>
+            <span>$${tax.toFixed(2)}</span>
+        </div>
+        <div class="receipt-item receipt-total">
+            <span>Total:</span>
+            <span>$${total.toFixed(2)}</span>
+        </div>`;
+
+    Cart.clearCart();
+    updateCartCountInHeader();
+    showPage('Reciept');
+}
 
 /////////////////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', function () {
