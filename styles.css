@@ -113,7 +113,7 @@ body{
 }
 .cardFour{
     background-image: url(GameImgs/MilesMorales.jpg);
-    background-size: 460px;
+    background-size: 355px;
 }
 .cardFive{
     background-image: url(GameImgs/Batman.png);
@@ -141,12 +141,53 @@ body{
     gap: 20px;
     padding: 10px;
 }
-/*.list-view {
+.list-view {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    gap: 15px;
-}*/
+    gap: 0;
+}
+
+.list-view .dealCards {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 120px;
+    border-radius: 0;
+    margin: 0;
+}
+
+.list-view .dealImgs {
+    width: 150px;
+    min-width: 150px;
+    height: 120px;
+}
+
+.list-view .product-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.list-view .product-footer {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+.list-view .dealImgs.img4 {
+    background-position: center center;
+    background-size: 125%;
+}
+
+
+
+.list-view .dealImgs.img9 {
+    background-position: center center;
+    background-size: 170%;
+}
 
 #Games{
     position: relative;
@@ -204,20 +245,23 @@ body{
 }
 .img6{
     background-image: url(/GameImgs/GoW.png);
+    background-position: center -1px;
+    background-size: 110%;
 }
 .img7{
     background-image: url(/GameImgs/MilesMorales.jpg);
-    background-position: -70px -35px;
-    background-size: 133%;
+    background-position: center 10px;
+    background-size: 103%;
 }
 .img8{
     background-image: url(/GameImgs/Mine2.png);
+    background-position: center -52px;
     background-size: 100%;
 }
 .img9{
-    background-image: url(/GameImgs/FH5.jpg);
-    background-position: -105px -44px;
-    background-size: 150%;
+    background-image: url(/GameImgs/FH6.png);
+    background-position: center -2px;;
+    background-size: 103%;
 }
 .img10{
     background-image: url(/GameImgs/Halo.jpg);
@@ -422,6 +466,18 @@ body{
     height: 60px;
     object-fit: cover;
     flex-shrink: 0;
+}
+.cart-item .dealImgs.img4 {
+    background-position: center center;
+    background-size: cover;
+}
+.cart-item .dealImgs.img7 {
+    background-position: center center;
+    background-size: cover;
+}
+.cart-item .dealImgs.img9 {
+    background-position: center center;
+    background-size: 150%;
 }
 .cart-item-content {
     flex-grow: 1;
