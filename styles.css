@@ -134,48 +134,43 @@ body{
 
 
 
-/*////////////// Games/////////////////////*/
+/*////////////// Games//////////////////////*/
 .grid-view {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     padding: 10px;
 }
-.list-view {
+/*.list-view {
     display: flex;
     flex-direction: column;
     padding: 20px;
     gap: 15px;
-}
+}*/
+
 #Games{
+    position: relative;
     background-image: url(GameImgs/DealsPg.png);
     background-size: cover;
     background-position: center;
-    position: relative;
     min-height: 100vh;
 }
-#Games::before{
-    content: ' ';
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,0.2);
-}
+
 #Games *{
     z-index: 1;
     position: relative;
 }
+
 /*Product styling*/
-.container{
-    display: flex;
-    justify-content: center;
-}
+
 .dealCards{
     position: relative;
     background: white;
     border-radius: 15px;
     width: 90%;
     margin: 10px;
-    margin-top: 40em;
+    margin-top: 6em;
+
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .dealCards:hover {
@@ -183,6 +178,7 @@ body{
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .dealImgs{
+    position: relative;
     border-radius: 15px 15px 0 0;
     background-size: cover;
     height: clamp(150px, 20vw, 33em);
@@ -200,23 +196,28 @@ body{
 }
 .img4{
     background-image: url(/GameImgs/Batman.png);
+    background-position: -25px 1px;
 }
 .img5{
-    background-image: url(/GameImgs/MarioGal2.png);
-
+    background-image: url(/GameImgs/MarioGalaxy.jpg);
+    background-position: 1px -5px;
 }
 .img6{
     background-image: url(/GameImgs/GoW.png);
 }
 .img7{
     background-image: url(/GameImgs/MilesMorales.jpg);
+    background-position: -70px -35px;
+    background-size: 133%;
 }
 .img8{
-    background-image: url(/GameImgs/Minecraft.jpg);
-
+    background-image: url(/GameImgs/Mine2.png);
+    background-size: 100%;
 }
 .img9{
     background-image: url(/GameImgs/FH5.jpg);
+    background-position: -105px -44px;
+    background-size: 150%;
 }
 .img10{
     background-image: url(/GameImgs/Halo.jpg);
@@ -251,7 +252,7 @@ body{
     color: #ffc107; /* Gold filled star */
 }
 .wishlist-tooltip {
-   position: absolute;
+    position: absolute;
     top: 3px;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
@@ -284,6 +285,7 @@ body{
     border: 5px black solid;
     height: 200px;
 }
+
 /*Add to cart and product description*/
 .product-info {
     padding: 1.5rem;
