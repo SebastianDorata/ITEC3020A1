@@ -51,11 +51,27 @@ body{
 }
 
 
-/* home*/
+/*////////////// HomePage/////////////////////*/
+#Home{
+    position: relative;
+    background-image: url(GameImgs/MarioGal3.png);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+#Home::before{
+    content: ' ';
+    position: absolute;
+    inset: 0;
+    /*background: rgba(255,255,255,0.1);*/
+}
+#Home *{
+    z-index: 1;
+    position: relative;
+}
 .carousel{
     margin: 100px auto;
-    width: 90%;
-    border: 5px solid red;
+    width: 100%;
     display: flex;
     overflow-x: auto;
 }
@@ -67,23 +83,58 @@ body{
     align-items: center;
     justify-content: center;
     gap:1em;
-    animation: spin 25s infinite linear;
+    animation: spin 40s infinite linear;
     padding-right: 1em;
 }
 .card{
     flex: 0 0 5em;
     height: 5em;
     padding: 1em;
-    background: #159954;
     font-size: 3em;
     border-radius: .2em;
     text-align:center;
     align-content: center;
+    background-position: 50% center;
+    background-size: cover;
 }
 @keyframes spin{
     from{ translate: 0;}
     to { translate: -100%}
 }
+.cardOne{
+    background-image: url(/GameImgs/Spiderman2.jpg);
+}
+.cardTwo{
+    background-image: url(/GameImgs/Halo.jpg);
+    background-size: 351px;
+}
+.cardThree{
+    background-image: url(GameImgs/Minecraft.jpg);
+}
+.cardFour{
+    background-image: url(GameImgs/MilesMorales.jpg);
+    background-size: 460px;
+}
+.cardFive{
+    background-image: url(GameImgs/Batman.png);
+
+}
+.cardSix{
+    background-image: url(GameImgs/hogwarts.jpg);
+    background-size: 330px;
+}
+.cardSeven{
+    background-image: url(GameImgs/GoW.png);
+}
+#homePre{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+
+
+
 
 /*////////////// Deals/////////////////////*/
 #Deals{
@@ -195,14 +246,12 @@ body{
     flex-direction: column;
     align-items: center;
 }
-
 #Wishlist .dealCards {
     border: 1px black solid;
     width: 20%;
     margin-top: 10px;
 
 }
-
 #Wishlist .dealImgs {
     border: 5px black solid;
     height: 200px;
@@ -214,14 +263,12 @@ body{
     flex-direction: column;
     flex: 1;
 }
-
 .product-title {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 0.75rem;
     color: var(--bs-emphasis-color);
 }
-
 .product-description {
     color: var(--bs-secondary-color);
     margin-bottom: 1rem;
@@ -229,31 +276,26 @@ body{
     font-size: 0.95rem;
     line-height: 1.5;
 }
-
 .product-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
 }
-
 .product-price {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--bs-primary);
 }
-
 .add-to-cart-btn {
     padding: 0.5rem 1.25rem;
     font-weight: 500;
     white-space: nowrap;
 }
-
 .add-to-cart-btn:hover {
     transform: scale(1.05);
     transition: transform 0.2s ease;
 }
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .product-image {
@@ -270,6 +312,8 @@ body{
         width: 100%;
     }
 }
+
+
 
 
 /*///////// Shopping cart/////////// */
@@ -330,6 +374,9 @@ body{
 }
 
 
+
+
+
 /*///////////// Checkout Page///////////////// */
 .cart-item {
     display: flex;
@@ -339,7 +386,6 @@ body{
     border-bottom: 1px solid #eee;
     position: relative;
 }
-
 .cart-item img {
     border-radius: 4px;
     width: 60px;
@@ -347,37 +393,31 @@ body{
     object-fit: cover;
     flex-shrink: 0;
 }
-
 .cart-item-content {
     flex-grow: 1;
     min-width: 0;
 }
-
 .cart-item h6 {
     margin: 0 0 5px 0;
     font-weight: bold;
     font-size: 1rem;
 }
-
 .cart-item p {
     margin: 0 0 8px 0;
     color: #666;
     font-size: 0.875rem;
     line-height: 1.3;
 }
-
 .cart-item .price {
     font-weight: bold;
     font-size: 1rem;
 }
-
 .cart-item .quantity-controls {
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 8px 0;
 }
-
 .cart-item .quantity-btn {
     width: 28px;
     height: 28px;
@@ -390,18 +430,15 @@ body{
     cursor: pointer;
     font-size: 0.875rem;
 }
-
 .cart-item .quantity-btn:hover {
     background: #f8f9fa;
 }
-
 .cart-item .quantity {
     font-weight: bold;
     min-width: 25px;
     text-align: center;
     font-size: 0.875rem;
 }
-
 .delete-btn {
     background: #dc3545;
     color: white;
@@ -415,11 +452,9 @@ body{
     cursor: pointer;
     flex-shrink: 0;
 }
-
 .delete-btn:hover {
     background: #c82333;
 }
-
 .cart-item-actions {
     display: flex;
     align-items: center;
@@ -427,12 +462,10 @@ body{
     margin-left: auto;
     flex-shrink: 0;
 }
-
 .empty-cart {
     text-align: center;
     padding: 40px;
 }
-
 .empty-cart-icon {
     font-size: 48px;
     color: #6c757d;
@@ -443,7 +476,7 @@ body{
 
 
 
-
+/*///////////// Footer///////////////// */
 footer{
     margin-top: auto;
 }
