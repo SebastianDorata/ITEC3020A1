@@ -201,7 +201,12 @@ body{
     z-index: 1;
     position: relative;
 }
-
+#Games .favorite-btn {
+    position: absolute !important;
+    top: 2px;
+    right: 10px;
+    z-index: 2;
+}
 /*Product styling*/
 
 .dealCards{

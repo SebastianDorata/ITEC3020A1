@@ -93,13 +93,13 @@
                     <option value="60+">$60+</option>
                 </select>
 
-                <button onclick="resetFilters()">Reset Filters</button>
                 <button onclick="applyFilters()">Apply Filters</button>
+                <button onclick="resetFilters()">Reset Filters</button>
                 <button id="view-toggle" onclick="toggleView()">List View</button>
             </div>
-            <div id="container" class ="grid-view">
+            <div  class="grid-view">
 
-                <div class = "dealCards">
+                <div class = "dealCards" data-category="action" data-platform="ps5">
                     <div class = "dealImgs img1">
                             <button class="favorite-btn" aria-label="Add to favorites">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
@@ -117,7 +117,7 @@
                     </div>
 
                 </div>
-                <div class = "dealCards">
+                <div class = "dealCards" data-category="racing" data-platform="switch">
                     <div class = "dealImgs img2">
                         <button class="favorite-btn" aria-label="Add to favorites">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
@@ -135,7 +135,7 @@
                     </div>
 
                 </div>
-                <div class = "dealCards">
+                <div class = "dealCards" data-category="rpg" data-platform="ps5,switch,pc">
                     <div class = "dealImgs img3">
                         <button class="favorite-btn" aria-label="Add to favorites">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
@@ -153,7 +153,7 @@
                     </div>
 
                 </div>
-                <div class = "dealCards">
+                <div class = "dealCards" data-category="adventure" data-platform="xbox">
     <div class="dealImgs img4">
         <button class="favorite-btn" aria-label="Add to favorites">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
@@ -170,7 +170,7 @@
         </div>
     </div>
 </div>
-                <div class = "dealCards">
+                <div class = "dealCards" data-category="adventure" data-platform="switch">
     <div class="dealImgs img5">
         <button class="favorite-btn" aria-label="Add to favorites">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
@@ -187,7 +187,7 @@
         </div>
     </div>
 </div>
-                <div class = "dealCards">
+                <div class = "dealCards" data-category="adventure" data-platform="ps5">
     <div class="dealImgs img6">
         <button class="favorite-btn" aria-label="Add to favorites">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
@@ -204,7 +204,7 @@
         </div>
     </div>
 </div>
-                <div class = "dealCards">
+                <div class = "dealCards" data-category="action" data-platform="ps5">
     <div class="dealImgs img7">
         <button class="favorite-btn" aria-label="Add to favorites">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
@@ -221,7 +221,7 @@
         </div>
     </div>
 </div>
-                <div class = "dealCards">
+                <div class = "dealCards" data-category="adventure" data-platform="xbox,switch,pc">
     <div class="dealImgs img8">
         <button class="favorite-btn" aria-label="Add to favorites">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
@@ -238,7 +238,7 @@
         </div>
     </div>
 </div>
-                <div class = "dealCards">
+                <div class = "dealCards" data-category="racing" data-platform="xbox,pc">
     <div class="dealImgs img9">
         <button class="favorite-btn" aria-label="Add to favorites">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
@@ -255,7 +255,7 @@
         </div>
     </div>
 </div>
-                <div class = "dealCards">
+                <div class = "dealCards" data-category="action" data-platform="xbox">
     <div class="dealImgs img10">
         <button class="favorite-btn" aria-label="Add to favorites">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">

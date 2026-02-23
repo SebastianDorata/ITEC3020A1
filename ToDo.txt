@@ -1,2 +1,3 @@
 Add spinner to the checkout page.
 Add a cancel & Clear button to the chekout page
+Add 4 games to be marked as "recommended" in the carousel 

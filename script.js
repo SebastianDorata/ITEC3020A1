@@ -480,56 +480,29 @@ const gamesData = [
 ];
 let currentView = 'grid';
 function applyFilters() {
-
     const search = document.getElementById('searchBar').value.toLowerCase();
     const category = document.getElementById('gameTypes').value;
     const platform = document.getElementById('gamePlatforms').value;
     const price = document.getElementById('prices').value;
 
-    let filtered = gamesData.filter(game => {
-        const matchesSearch = game.title.toLowerCase().includes(search);
-        const matchesCategory = category === 'all' || game.category === category;
-        const matchesPlatform = platform === 'all' || (Array.isArray(game.platform) ? game.platform.includes(platform) : game.platform === platform);
+    document.querySelectorAll('#Games .dealCards').forEach(card => {
+        const title = card.querySelector('.product-title').textContent.toLowerCase();
+        const cardCategory = card.dataset.category;
+        const cardPlatform = card.dataset.platform;
+        const cardPrice = parseFloat(card.querySelector('.product-price').textContent.replace('$', ''));
 
-    let matchesPrice = true;
-        if (price === '0-20') matchesPrice = game.price <= 20;
-        else if (price === '20-40') matchesPrice = game.price > 20 && game.price <= 40;
-        else if (price === '40-60') matchesPrice = game.price > 40 && game.price <= 60;
-        else if (price === '60+') matchesPrice = game.price > 60;
+        const matchesSearch = title.includes(search);
+        const matchesCategory = category === 'all' || cardCategory === category;
+        const matchesPlatform = platform === 'all' || cardPlatform.includes(platform);
 
-        return matchesSearch && matchesCategory && matchesPlatform && matchesPrice;
-    });
+        let matchesPrice = true;
+        if (price === '0-20') matchesPrice = cardPrice <= 20;
+        else if (price === '20-40') matchesPrice = cardPrice > 20 && cardPrice <= 40;
+        else if (price === '40-60') matchesPrice = cardPrice > 40 && cardPrice <= 60;
+        else if (price === '60+') matchesPrice = cardPrice > 60;
 
-    renderGames(filtered);
-}
-function renderGames(games) {
-    const container = document.getElementById('container');
-
-    if (games.length === 0) {
-        container.innerHTML = '<p>No games found.</p>';
-        return;
-    }
-
-    container.innerHTML = games.map(game => `
-        <div class="dealCards">
-            <div class="dealImgs ${game.imageClass}"></div>
-            <div class="product-info">
-                <h5 class="product-title">${game.title}</h5>
-                <p class="product-description">${game.description}</p>
-                <p class="game-rating">${game.rating ? `Rating: ${'★'.repeat(Math.round(game.rating))}${'☆'.repeat(5 - Math.round(game.rating))} (${game.rating})` : 'Not yet rated'}</p>
-                <div class="product-footer">
-                    <span class="product-price">$${game.price.toFixed(2)}</span>
-                    <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    `).join('');
-
-
-    container.querySelectorAll('.add-to-cart-btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-            cartInstance.addToCart(e.target);
-        });
+        const visible = matchesSearch && matchesCategory && matchesPlatform && matchesPrice;
+        card.style.display = visible ? (currentView === 'list' ? 'flex' : '') : 'none';
     });
 }
 function resetFilters() {
@@ -537,10 +510,12 @@ function resetFilters() {
     document.getElementById('gameTypes').value = 'all';
     document.getElementById('gamePlatforms').value = 'all';
     document.getElementById('prices').value = 'all';
-    renderGames(gamesData);
+    document.querySelectorAll('#Games .dealCards').forEach(card => {
+        card.style.display = currentView === 'list' ? 'flex' : '';
+    });
 }
 function toggleView() {
-    const container = document.getElementById('container');
+    const container = document.querySelector('#Games .grid-view, #Games .list-view');
     const toggleBtn = document.getElementById('view-toggle');
 
     if (currentView === 'grid') {
@@ -554,8 +529,14 @@ function toggleView() {
         container.classList.add('grid-view');
         toggleBtn.textContent = 'List View';
     }
-}
 
+
+    document.querySelectorAll('#Games .dealCards').forEach(card => {
+        if (card.style.display !== 'none') {
+            card.style.display = '';
+        }
+    });
+}
 
 
 
