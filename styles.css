@@ -134,23 +134,33 @@ body{
 
 
 
-
-
-/*////////////// Deals/////////////////////*/
-#Deals{
+/*////////////// Games/////////////////////*/
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 10px;
+}
+.list-view {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+}
+#Games{
     background-image: url(GameImgs/DealsPg.png);
     background-size: cover;
     background-position: center;
     position: relative;
     min-height: 100vh;
 }
-#Deals::before{
+#Games::before{
     content: ' ';
     position: absolute;
     inset: 0;
     background: rgba(255,255,255,0.2);
 }
-#Deals *{
+#Games *{
     z-index: 1;
     position: relative;
 }
@@ -183,18 +193,36 @@ body{
     background-position: 50% center;
 }
 .img2{
-    background-image: url(/GameImgs/DealsPg1.jpg);
-    background-position: 97%;
-    background-size: 155%;
-    background-repeat: no-repeat;
+    background-image: url(/GameImgs/Mariokart8.png);
 }
 .img3{
-    background-image: url(/GameImgs/Mariokart8.png);
-    background-position: -10% 45%;
-}
-.img4{
     background-image: url(/GameImgs/hogwarts.jpg);
 }
+.img4{
+    background-image: url(/GameImgs/Batman.png);
+}
+.img5{
+    background-image: url(/GameImgs/MarioGal2.png);
+
+}
+.img6{
+    background-image: url(/GameImgs/GoW.png);
+}
+.img7{
+    background-image: url(/GameImgs/MilesMorales.jpg);
+}
+.img8{
+    background-image: url(/GameImgs/Minecraft.jpg);
+
+}
+.img9{
+    background-image: url(/GameImgs/FH5.jpg);
+}
+.img10{
+    background-image: url(/GameImgs/Halo.jpg);
+
+}
+
 /*Add to wishlist button*/
 .favorite-btn {
     position: absolute !important;

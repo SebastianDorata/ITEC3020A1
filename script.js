@@ -6,6 +6,20 @@ function showPage(pageId) {
 
 /////////////////////////////////////////////////////////
 // Cart functionality
+
+function showToast(message, color = '#28a745') {
+    const toast = document.createElement('div');
+    toast.className = 'cart-toast';
+    toast.style.background = color;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => {
+        toast.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => {
+            if (toast.parentNode) document.body.removeChild(toast);
+        }, 300);
+    }, 3000);
+}
 class Cart {
     constructor() {
         this.cart = Cart.getCart();
@@ -21,7 +35,7 @@ class Cart {
         const dealImgs = productCard.querySelector('.dealImgs');
         const productImage = dealImgs ? dealImgs.classList[1] : '';
 
-        // Always read fresh from localStorage before modifying
+///////////// Always read fresh from localStorage before modifying//////////////////////////
         this.cart = Cart.getCart();
 
         const product = {
@@ -50,16 +64,7 @@ class Cart {
     }
 
     showAddToCartConfirmation(productTitle) {
-        const toast = document.createElement('div');
-        toast.className = 'cart-toast';
-        toast.textContent = `✓ Added ${productTitle} to cart!`;
-        document.body.appendChild(toast);
-        setTimeout(() => {
-            toast.style.animation = 'slideOut 0.3s ease';
-            setTimeout(() => {
-                if (toast.parentNode) document.body.removeChild(toast);
-            }, 300);
-        }, 3000);
+        showToast(`✓ Added ${productTitle} to cart!`);
     }
 
     static getCart() {
@@ -160,14 +165,10 @@ class Wishlist {
                 localStorage.setItem('cart', JSON.stringify(cart));
                 updateCartCountInHeader();
                 displayCartItems();
-                const toast = document.createElement('div');
-                toast.className = 'cart-toast';
-                toast.textContent = `✓ Added ${item.title} to cart!`;
-                document.body.appendChild(toast);
-                setTimeout(() => {
-                    toast.style.animation = 'slideOut 0.3s ease';
-                    setTimeout(() => { if (toast.parentNode) document.body.removeChild(toast); }, 300);
-                }, 3000);
+
+                showToast(`✓ Added ${item.title} to cart!`);
+
+
             });
         });
 
@@ -292,17 +293,7 @@ function updateQuantity(index, change) {
 }
 
 function showRemovalConfirmation() {
-    const toast = document.createElement('div');
-    toast.className = 'cart-toast';
-    toast.style.background = '#dc3545';
-    toast.textContent = '✓ Item removed from cart!';
-    document.body.appendChild(toast);
-    setTimeout(() => {
-        toast.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => {
-            if (toast.parentNode) document.body.removeChild(toast);
-        }, 300);
-    }, 3000);
+    showToast('✓ Item removed from cart!', '#dc3545');
 }
 
 // To be sorted out later.
@@ -330,19 +321,22 @@ function clearCart() {
         showRemovalConfirmation();
     }
 }
-function displayCheckoutSummary() {
-    const cartItems = Cart.getCart();
-    const checkoutContainer = document.getElementById('checkout-summary');
-    if (!checkoutContainer) return;
-
+function calculateTotals(cartItems) {
     let subtotal = 0;
     cartItems.forEach(item => {
         const price = parseFloat(item.price.replace('$', ''));
         subtotal += price * (item.quantity || 1);
     });
-
     const tax = subtotal * 0.13;
     const total = subtotal + tax;
+    return { subtotal, tax, total };
+}
+function displayCheckoutSummary() {
+    const cartItems = Cart.getCart();
+    const checkoutContainer = document.getElementById('checkout-summary');
+    if (!checkoutContainer) return;
+
+    const { subtotal, tax, total } = calculateTotals(cartItems);
 
     checkoutContainer.innerHTML = `
         <p>Subtotal: $${subtotal.toFixed(2)}</p>
@@ -407,11 +401,14 @@ function showReceipt(email, cardName) {
 
     const orderDate = `${day}/${month}/${year}`;
 
-    let subtotal = 0;
+
+
+
+    const { subtotal, tax, total } = calculateTotals(cartItems);
+
     document.getElementById('receipt-items').innerHTML = cartItems.map(item => {
         const price = parseFloat(item.price.replace('$', ''));
         const itemTotal = price * (item.quantity || 1);
-        subtotal += itemTotal;
         return `
             <div class="receipt-item">
                 <span>${item.title} x${item.quantity || 1}</span>
@@ -420,8 +417,12 @@ function showReceipt(email, cardName) {
         `;
     }).join('');
 
-    const tax = subtotal * 0.13;
-    const total = subtotal + tax;
+
+
+
+
+
+
 
     document.getElementById('receipt-name').textContent = cardName;
     document.getElementById('receipt-email').textContent = email;
@@ -448,6 +449,148 @@ function showReceipt(email, cardName) {
     showPage('Reciept');
 }
 
+
+
+
+
+/////////////////////////////////////////////////////////
+// Games Page
+
+
+const gamesData = [
+    { title: "Spider-Man 2", category: "action", platform: "ps5", price: 39.99, rating: 4.8, imageClass: "img1", description: "Digital Deluxe Edition for PlayStation 5" },
+
+    { title: "Mario Kart 8", category: "racing", platform: "switch", price: 49.99, rating: 4.7, imageClass: "img2", description: "Digital Edition" },
+
+    { title: "Hogwarts Legacy", category: "rpg", platform:["ps5","switch", "pc"], price: 44.99, rating: 4.6, imageClass: "img3", description: "Deluxe Edition" },
+
+    { title: "Batman: Arkham Knight", category: "adventure", platform: "xbox", price: 25.99, rating: 4.2, imageClass: "img4", description: "Premium Edition for Xbox Series X/S" },
+
+    { title: "Super Mario Galaxy 1 & 2", category: "adventure", platform: "switch", price: 89.99, rating: 4.5, imageClass: "img5", description: "Deluxe Edition for Nintendo Switch" },
+
+    { title: "God Of War: Ragnarok", category: "adventure", platform: "ps5", price: 120.99, rating: 4.0, imageClass: "img6", description: "Standard Edition for PlayStation 5" },
+
+    { title: "Spider-Man: Miles Morales ", category: "action", platform: "ps5", price: 79.99, rating: 4.9, imageClass: "img7", description: "Standard Edition for PlayStation 5" },
+
+    { title: "Minecraft: Java and Bedrock Edition", category: "adventure", platform: ["xbox","switch", "pc"], price: 39.99, rating: 5.0, imageClass: "img8", description: "Deluxe Collection" },
+
+    { title: "Forza Horizon 6", category: "racing", platform: ["xbox", "pc"], price: 119.99, rating: null, imageClass: "img9", description: "Standard Edition for Xbox Series X/S. Available for preorder now!" },
+
+    { title: "Halo Infinite", category: "action", platform: "xbox", price: 99.99, rating: 3.7, imageClass: "img10", description: "Standard Edition" },
+];
+let currentView = 'grid';
+function applyFilters() {
+
+    const search = document.getElementById('searchBar').value.toLowerCase();
+    const category = document.getElementById('gameTypes').value;
+    const platform = document.getElementById('gamePlatforms').value;
+    const price = document.getElementById('prices').value;
+
+    let filtered = gamesData.filter(game => {
+        const matchesSearch = game.title.toLowerCase().includes(search);
+        const matchesCategory = category === 'all' || game.category === category;
+        const matchesPlatform = platform === 'all' || (Array.isArray(game.platform) ? game.platform.includes(platform) : game.platform === platform);
+
+    let matchesPrice = true;
+        if (price === '0-20') matchesPrice = game.price <= 20;
+        else if (price === '20-40') matchesPrice = game.price > 20 && game.price <= 40;
+        else if (price === '40-60') matchesPrice = game.price > 40 && game.price <= 60;
+        else if (price === '60+') matchesPrice = game.price > 60;
+
+        return matchesSearch && matchesCategory && matchesPlatform && matchesPrice;
+    });
+
+    renderGames(filtered);
+}
+function renderGames(games) {
+    const container = document.getElementById('container');
+
+    if (games.length === 0) {
+        container.innerHTML = '<p>No games found.</p>';
+        return;
+    }
+
+    container.innerHTML = games.map(game => `
+        <div class="dealCards">
+            <div class="dealImgs ${game.imageClass}"></div>
+            <div class="product-info">
+                <h5 class="product-title">${game.title}</h5>
+                <p class="product-description">${game.description}</p>
+                <p class="game-rating">${game.rating ? `Rating: ${'★'.repeat(Math.round(game.rating))}${'☆'.repeat(5 - Math.round(game.rating))} (${game.rating})` : 'Not yet rated'}</p>
+                <div class="product-footer">
+                    <span class="product-price">$${game.price.toFixed(2)}</span>
+                    <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+
+    container.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            cartInstance.addToCart(e.target);
+        });
+    });
+}
+function resetFilters() {
+    document.getElementById('searchBar').value = '';
+    document.getElementById('gameTypes').value = 'all';
+    document.getElementById('gamePlatforms').value = 'all';
+    document.getElementById('prices').value = 'all';
+    renderGames(gamesData);
+}
+function toggleView() {
+    const container = document.getElementById('container');
+    const toggleBtn = document.getElementById('view-toggle');
+
+    if (currentView === 'grid') {
+        currentView = 'list';
+        container.classList.remove('grid-view');
+        container.classList.add('list-view');
+        toggleBtn.textContent = 'Grid View';
+    } else {
+        currentView = 'grid';
+        container.classList.remove('list-view');
+        container.classList.add('grid-view');
+        toggleBtn.textContent = 'List View';
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /////////////////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', function () {
     window.cartInstance = new Cart();
@@ -458,6 +601,8 @@ document.addEventListener('DOMContentLoaded', function () {
             cartInstance.addToCart(e.target);
         });
     });
+    document.getElementById('searchBar').addEventListener('input', applyFilters);
+        renderGames(gamesData);
 
     displayCartItems();
     updateCartCountInHeader();

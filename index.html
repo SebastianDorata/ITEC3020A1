@@ -15,7 +15,7 @@
                 <ul>
                     <li><a href="#" onclick="showPage('Home')">Home</a></li>
                     <li><a href="#" onclick="showPage('Games')">Games</a></li>
-                    <li><a href="#" onclick="showPage('Deals')">Deals</a></li>
+                    <li><a href="#" onclick="showPage('Details')">Details</a></li>
                     <li><a href="#" onclick="showPage('About')">About</a></li>
                     <li><a href="#" onclick="showPage('Wishlist')">Wishlist</a></li>
                 </ul>
@@ -63,13 +63,53 @@
             <h1 id = "homePre">Available for Preorder Now!</h1>
 
          </div>
-        <div id="Games" class="page">
-    <h1>Games</h1>
-  </div>
-        <div id="Deals" class="page">
-    <h1>Available for Preorder now</h1>
 
-            <div class = "container">
+
+
+        <div id="Details" class="page">
+            <h1>Details</h1>
+        </div>
+
+
+
+
+
+
+        <div id="Games" class="page">
+        <h1>Available for Preorder now</h1>
+
+            <div class="searchBar">
+                <input type="text" id="searchBar" placeholder="Search games...">
+            </div>
+            <div class="filters">
+                <select id="gameTypes">
+                    <option value="all">All Categories</option>
+                    <option value="action">Action</option>
+                    <option value="adventure">Adventure</option>
+                    <option value="racing">Racing</option>
+                    <option value="rpg">RPG</option>
+                </select>
+                <select id="gamePlatforms">
+                    <option value="all">All Platforms</option>
+                    <option value="ps5">PlayStation 5</option>
+                    <option value="xbox">Xbox</option>
+                    <option value="switch">Nintendo Switch</option>
+                    <option value="pc">PC</option>
+                </select>
+                <select id="prices">
+                    <option value="all">All Prices</option>
+                    <option value="0-20">$0 - $20</option>
+                    <option value="20-40">$20 - $40</option>
+                    <option value="40-60">$40 - $60</option>
+                    <option value="60+">$60+</option>
+                </select>
+
+                <button onclick="resetFilters()">Reset Filters</button>
+                <button onclick="applyFilters()">Apply Filters</button>
+                <button id="view-toggle" onclick="toggleView()">List View</button>
+            </div>
+
+            <div id = "container" class="grid-view">
                 <div class = "dealCards">
                     <div class = "dealImgs img1">
                             <button class="favorite-btn" aria-label="Add to favorites">
@@ -89,26 +129,7 @@
 
                 </div>
                 <div class = "dealCards">
-                        <div class = "dealImgs img2">
-                            <button class="favorite-btn" aria-label="Add to favorites">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="product-info">
-                            <h5 class="product-title">Forza Horizon 6</h5>
-                            <p class="product-description">Standard Edition</p>
-                            <div class="product-footer">
-                                <span class="product-price">$89.99</span>
-                                <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                            </div>
-                        </div>
-
-
-                </div>
-                <div class = "dealCards">
-                    <div class = "dealImgs img3">
+                    <div class = "dealImgs img2">
                         <button class="favorite-btn" aria-label="Add to favorites">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
                               <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
@@ -126,7 +147,7 @@
 
                 </div>
                 <div class = "dealCards">
-                    <div class = "dealImgs img4">
+                    <div class = "dealImgs img3">
                         <button class="favorite-btn" aria-label="Add to favorites">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
@@ -143,8 +164,132 @@
                     </div>
 
                 </div>
+                <div class = "dealCards">
+    <div class="dealImgs img4">
+        <button class="favorite-btn" aria-label="Add to favorites">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+        </button>
+    </div>
+    <div class="product-info">
+        <h5 class="product-title">Batman: Arkham Knight</h5>
+        <p class="product-description">Premium Edition for Xbox Series X/S</p>
+        <div class="product-footer">
+            <span class="product-price">$25.99</span>
+            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+</div>
+                <div class = "dealCards">
+    <div class="dealImgs img5">
+        <button class="favorite-btn" aria-label="Add to favorites">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+        </button>
+    </div>
+    <div class="product-info">
+        <h5 class="product-title">Super Mario Galaxy 1 & 2</h5>
+        <p class="product-description">Deluxe Edition for Nintendo Switch</p>
+        <div class="product-footer">
+            <span class="product-price">$89.99</span>
+            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+</div>
+                <div class = "dealCards">
+    <div class="dealImgs img6">
+        <button class="favorite-btn" aria-label="Add to favorites">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+        </button>
+    </div>
+    <div class="product-info">
+        <h5 class="product-title">God Of War: Ragnarok</h5>
+        <p class="product-description">Standard Edition for PlayStation 5</p>
+        <div class="product-footer">
+            <span class="product-price">$120.99</span>
+            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+</div>
+                <div class = "dealCards">
+    <div class="dealImgs img7">
+        <button class="favorite-btn" aria-label="Add to favorites">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+        </button>
+    </div>
+    <div class="product-info">
+        <h5 class="product-title">Spider-Man: Miles Morales</h5>
+        <p class="product-description">Standard Edition for PlayStation 5</p>
+        <div class="product-footer">
+            <span class="product-price">$79.99</span>
+            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+</div>
+                <div class = "dealCards">
+    <div class="dealImgs img8">
+        <button class="favorite-btn" aria-label="Add to favorites">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+        </button>
+    </div>
+    <div class="product-info">
+        <h5 class="product-title">Minecraft: Java and Bedrock Edition</h5>
+        <p class="product-description">Deluxe Collection</p>
+        <div class="product-footer">
+            <span class="product-price">$39.99</span>
+            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+</div>
+                <div class = "dealCards">
+    <div class="dealImgs img9">
+        <button class="favorite-btn" aria-label="Add to favorites">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+        </button>
+    </div>
+    <div class="product-info">
+        <h5 class="product-title">Forza Horizon 6</h5>
+        <p class="product-description">Standard Edition for Xbox Series X/S. Available for preorder now!</p>
+        <div class="product-footer">
+            <span class="product-price">$119.99</span>
+            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+</div>
+                <div class = "dealCards">
+    <div class="dealImgs img10">
+        <button class="favorite-btn" aria-label="Add to favorites">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+        </button>
+    </div>
+    <div class="product-info">
+        <h5 class="product-title">Halo Infinite</h5>
+        <p class="product-description">Standard Edition</p>
+        <div class="product-footer">
+            <span class="product-price">$99.99</span>
+            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+</div>
             </div>
-  </div>
+        </div>
+
+
+
+
+
         <div id="About" class="page">
     <h1>About</h1>
   </div>
