@@ -47,22 +47,22 @@
         <h1>Home</h1>
             <div class = "carousel">
                 <div class = "group">
-                    <div class = "card cardOne"></div>
-                    <div class = "card cardTwo"></div>
-                    <div class = "card cardThree"></div>
-                    <div class = "card cardFour"></div>
-                    <div class = "card cardFive"></div>
-                    <div class = "card cardSix"></div>
-                    <div class = "card cardSeven"></div>
+                    <div class = "card cardOne" onclick="showGameDetail('Spider-Man 2')" style="cursor:pointer;"><span class="recommendedTag">Recommended</span></div>
+                    <div class = "card cardTwo" onclick="showGameDetail('Halo Infinite')" style="cursor:pointer;"><span class="recommendedTag">Recommended</span></div>
+                    <div class = "card cardThree" onclick="showGameDetail('Minecraft: Java and Bedrock Edition')" style="cursor:pointer;"><span class="recommendedTag">Recommended</span></div>
+                    <div class = "card cardFour" onclick="showGameDetail('Spider-Man: Miles Morales ')" style="cursor:pointer;"><span class="recommendedTag">Recommended</span></div>
+                    <div class = "card cardFive" onclick="showGameDetail('Batman: Arkham Knight')" style="cursor:pointer;"><span class="recommendedTag">Recommended</span></div>
+                    <div class = "card cardSix" onclick="showGameDetail('Hogwarts Legacy')" style="cursor:pointer;"><span class="recommendedTag">Recommended</span></div>
+                    <div class = "card cardSeven" onclick="showGameDetail('God Of War: Ragnarok')" style="cursor:pointer;"><span class="recommendedTag">Recommended</span></div>
                 </div>
                 <div class = "group">
-                    <div class = "card cardOne"></div>
-                    <div class = "card cardTwo"></div>
-                    <div class = "card cardThree"></div>
-                    <div class = "card cardFour"></div>
-                    <div class = "card cardFive"></div>
-                    <div class = "card cardSix"></div>
-                    <div class = "card cardSeven"></div>
+                    <div class = "card cardOne" onclick="showGameDetail('Spider-Man 2')" style="cursor:pointer;"><span class="recommendedTag">Recommended</span></div>
+                    <div class = "card cardTwo" onclick="showGameDetail('Halo Infinite')" style="cursor:pointer;"><span class="recommendedTag">Recommended</span></div>
+                    <div class = "card cardThree" onclick="showGameDetail('Minecraft: Java and Bedrock Edition')" style="cursor:pointer;"><span class="recommendedTag">Recommended</span></div>
+                    <div class = "card cardFour" onclick="showGameDetail('Spider-Man: Miles Morales ')" style="cursor:pointer;"><span class="recommendedTag">Recommended</span></div>
+                    <div class = "card cardFive" onclick="showGameDetail('Batman: Arkham Knight')" style="cursor:pointer;"><span class="recommendedTag">Recommended</span></div>
+                    <div class = "card cardSix" onclick="showGameDetail('Hogwarts Legacy')" style="cursor:pointer;"><span class="recommendedTag">Recommended</span></div>
+                    <div class = "card cardSeven" onclick="showGameDetail('God Of War: Ragnarok')" style="cursor:pointer;"><span class="recommendedTag">Recommended</span></div>
                 </div>
         </div>
             <h1 id = "homePre">Available for Preorder Now!</h1>
@@ -286,7 +286,11 @@
 
 
         <div id="Details" class="page">
-            <h1>Details</h1>
+            <div id="detail-image" class="dealImgs"></div>
+            <h1 id="detail-title"></h1>
+            <p id="detail-description"></p>
+            <p id="detail-price"></p>
+
         </div>
         <div id="About" class="page">
     <h1>About</h1>

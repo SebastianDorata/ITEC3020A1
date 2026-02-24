@@ -64,7 +64,7 @@ class Cart {
     }
 
     showAddToCartConfirmation(productTitle) {
-        showToast(`✓ Added ${productTitle} to cart!`);
+        showToast(`Added ${productTitle} to cart!`);
     }
 
     static getCart() {
@@ -304,7 +304,7 @@ function updateQuantity(index, change) {
 }
 
 function showRemovalConfirmation() {
-    showToast('✓ Item removed from cart!', '#dc3545');
+    showToast('Item removed from cart!', '#dc3545');
 }
 
 // To be sorted out later.
@@ -466,8 +466,6 @@ function showReceipt(email, cardName) {
 
 /////////////////////////////////////////////////////////
 // Games Page
-
-
 const gamesData = [
     { title: "Spider-Man 2", category: "action", platform: "ps5", price: 39.99, rating: 4.8, imageClass: "img1", description: "Digital Deluxe Edition for PlayStation 5" },
 
@@ -552,8 +550,18 @@ function toggleView() {
 
 
 
+/////////////////////////////////////////////////////////
+// Home
+function showGameDetail(title) {
+    const game = gamesData.find(g => g.title === title);
+    if (!game) return;
 
-
+    document.getElementById('detail-title').textContent = game.title;
+    document.getElementById('detail-description').textContent = game.description;
+    document.getElementById('detail-price').textContent = `$${game.price}`;
+    document.getElementById('detail-image').className = `dealImgs ${game.imageClass}`;
+    showPage('Details');
+}
 
 
 
