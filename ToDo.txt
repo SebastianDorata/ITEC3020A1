@@ -1,3 +1,13 @@
+Game detail page
+Style all pages.
+
 Add spinner to the checkout page.
 Add a cancel & Clear button to the chekout page
-Add 4 games to be marked as "recommended" in the carousel 
+games to be marked as "recommended" in the carousel. Make them clickable to view game info
+After Item is moved to cart from wishlist. Remove it from wishlist
+After an order is completed, The item needs to be removed from the Wishlist.
+Apply some simple animations to the checkout page for UI/UX
+Order num, date, email, order items, price for each, subtotal, tax, and total price. And a continue to shop button. It should have a nice design for UX.
+Higher marks. Both  types of products displayed on home page. 
+wishlist count badge.
+Release date?

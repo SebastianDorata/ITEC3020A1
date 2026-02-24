@@ -1,0 +1,2 @@
+About page: Contact form. Case testing. Edge Case. Students lost marks because they did not have extensions. We need .com/.ca ect. Make sure it can handle all.
+People lost marks on the checkout because they did not test all validations. Valid card, valid date, valid email. And show error messages.

@@ -334,7 +334,21 @@ body{
     border: 5px black solid;
     height: 200px;
 }
-
+.wishlist-badge {
+    position: absolute;
+    top: -28px;
+    right: -17px;
+    background: #dc3545;
+    color: white;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
 /*Add to cart and product description*/
 .product-info {
     padding: 1.5rem;
@@ -479,10 +493,6 @@ body{
 .cart-item .dealImgs.img7 {
     background-position: center center;
     background-size: cover;
-}
-.cart-item .dealImgs.img9 {
-    background-position: center center;
-    background-size: 150%;
 }
 .cart-item-content {
     flex-grow: 1;

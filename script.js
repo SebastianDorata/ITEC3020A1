@@ -124,6 +124,7 @@ class Wishlist {
 
         localStorage.setItem('wishlist', JSON.stringify(this.wishlist));
         this.updateWishlistDisplay();
+        updateWishlistCountInHeader();
     }
 
     updateWishlistDisplay() {
@@ -179,9 +180,11 @@ class Wishlist {
                 this.wishlist.splice(index, 1);
                 localStorage.setItem('wishlist', JSON.stringify(this.wishlist));
                 this.updateWishlistDisplay();
+                updateWishlistCountInHeader();
             });
         });
     }
+
 }
 
 function showTooltip(button, message) {
@@ -193,7 +196,7 @@ function showTooltip(button, message) {
 }
 
 /////////////////////////////////////////////////////////
-// Cart items counter
+// Cart and wishlist items counter
 function updateCartCountInHeader() {
     const cartBadge = document.querySelector('.cart-badge');
     if (cartBadge) {
@@ -203,7 +206,15 @@ function updateCartCountInHeader() {
         cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
     }
 }
-
+function updateWishlistCountInHeader() {
+    const wishlistBadge = document.querySelector('.wishlist-badge');
+    if (wishlistBadge) {
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const totalItems = wishlist.length;
+        wishlistBadge.textContent = totalItems;
+        wishlistBadge.style.display = totalItems > 0 ? 'flex' : 'none';
+    }
+}
 /////////////////////////////////////////////////////////
 // Cart display
 function displayCartItems() {
@@ -592,6 +603,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.key === 'cart') {
             displayCartItems();
             updateCartCountInHeader();
+            updateWishlistCountInHeader();
         }
     });
 });
