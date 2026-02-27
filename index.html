@@ -7,7 +7,6 @@
 
     </head>
     <body>
-
         <nav class= "navbar">
             <a href = "#" class = "storeName">Game Store</a>
             <div class = "navRight">
@@ -42,7 +41,7 @@
         </nav>
 
 
-
+<!---Home Page-------------------------------------------->
         <div id="Home" class="page active">
         <h1>Home</h1>
             <div class = "carousel">
@@ -69,8 +68,10 @@
 
          </div>
 
+
+<!---Games Page-------------------------------------------->
         <div id="Games" class="page">
-        <h1>Available for Preorder now</h1>
+            <h1>Available for Preorder now</h1>
 
             <div class="searchBar">
                 <input type="text" id="searchBar" placeholder="Search games...">
@@ -103,7 +104,6 @@
                 <button id="view-toggle" onclick="toggleView()">List View</button>
             </div>
             <div  class="grid-view">
-
                 <div class = "dealCards" data-category="action" data-platform="ps5">
                     <div class = "dealImgs img1">
                             <button class="favorite-btn" aria-label="Add to favorites">
@@ -159,146 +159,289 @@
 
                 </div>
                 <div class = "dealCards" data-category="adventure" data-platform="xbox">
-    <div class="dealImgs img4">
-        <button class="favorite-btn" aria-label="Add to favorites">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-            </svg>
-        </button>
-    </div>
-    <div class="product-info">
-        <h5 class="product-title">Batman: Arkham Knight</h5>
-        <p class="product-description">Premium Edition for Xbox Series X/S</p>
-        <div class="product-footer">
-            <span class="product-price">$25.99</span>
-            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-        </div>
-    </div>
-</div>
+                    <div class="dealImgs img4">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Batman: Arkham Knight</h5>
+                        <p class="product-description">Premium Edition for Xbox Series X/S</p>
+                            <div class="product-footer">
+                                <span class="product-price">$25.99</span>
+                                <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            </div>
+                    </div>
+                </div>
                 <div class = "dealCards" data-category="adventure" data-platform="switch">
-    <div class="dealImgs img5">
-        <button class="favorite-btn" aria-label="Add to favorites">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-            </svg>
-        </button>
-    </div>
-    <div class="product-info">
-        <h5 class="product-title">Super Mario Galaxy 1 & 2</h5>
-        <p class="product-description">Deluxe Edition for Nintendo Switch</p>
-        <div class="product-footer">
-            <span class="product-price">$89.99</span>
-            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-        </div>
-    </div>
-</div>
+                    <div class="dealImgs img5">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Super Mario Galaxy 1 & 2</h5>
+                        <p class="product-description">Deluxe Edition for Nintendo Switch</p>
+                            <div class="product-footer">
+                                <span class="product-price">$89.99</span>
+                                <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            </div>
+                    </div>
+                </div>
                 <div class = "dealCards" data-category="adventure" data-platform="ps5">
-    <div class="dealImgs img6">
-        <button class="favorite-btn" aria-label="Add to favorites">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-            </svg>
-        </button>
-    </div>
-    <div class="product-info">
-        <h5 class="product-title">God Of War: Ragnarok</h5>
-        <p class="product-description">Standard Edition for PlayStation 5</p>
-        <div class="product-footer">
-            <span class="product-price">$120.99</span>
-            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-        </div>
-    </div>
-</div>
+                    <div class="dealImgs img6">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                        </button>
+                    </div>
+                        <div class="product-info">
+                            <h5 class="product-title">God Of War: Ragnarok</h5>
+                            <p class="product-description">Standard Edition for PlayStation 5</p>
+                                <div class="product-footer">
+                                    <span class="product-price">$120.99</span>
+                                    <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                                </div>
+                        </div>
+                </div>
                 <div class = "dealCards" data-category="action" data-platform="ps5">
-    <div class="dealImgs img7">
-        <button class="favorite-btn" aria-label="Add to favorites">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-            </svg>
-        </button>
-    </div>
-    <div class="product-info">
-        <h5 class="product-title">Spider-Man: Miles Morales</h5>
-        <p class="product-description">Standard Edition for PlayStation 5</p>
-        <div class="product-footer">
-            <span class="product-price">$79.99</span>
-            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-        </div>
-    </div>
-</div>
+                    <div class="dealImgs img7">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Spider-Man: Miles Morales</h5>
+                        <p class="product-description">Standard Edition for PlayStation 5</p>
+                        <div class="product-footer">
+                            <span class="product-price">$79.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
                 <div class = "dealCards" data-category="adventure" data-platform="xbox,switch,pc">
-    <div class="dealImgs img8">
-        <button class="favorite-btn" aria-label="Add to favorites">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-            </svg>
-        </button>
-    </div>
-    <div class="product-info">
-        <h5 class="product-title">Minecraft: Java and Bedrock Edition</h5>
-        <p class="product-description">Deluxe Collection</p>
-        <div class="product-footer">
-            <span class="product-price">$39.99</span>
-            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-        </div>
-    </div>
-</div>
+                    <div class="dealImgs img8">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Minecraft: Java and Bedrock Edition</h5>
+                        <p class="product-description">Deluxe Collection</p>
+                        <div class="product-footer">
+                            <span class="product-price">$39.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
                 <div class = "dealCards" data-category="racing" data-platform="xbox,pc">
-    <div class="dealImgs img9">
-        <button class="favorite-btn" aria-label="Add to favorites">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-            </svg>
-        </button>
-    </div>
-    <div class="product-info">
-        <h5 class="product-title">Forza Horizon 6</h5>
-        <p class="product-description">Standard Edition for Xbox Series X/S. Available for preorder now!</p>
-        <div class="product-footer">
-            <span class="product-price">$119.99</span>
-            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-        </div>
-    </div>
-</div>
+                    <div class="dealImgs img9">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Forza Horizon 6</h5>
+                        <p class="product-description">Standard Edition for Xbox Series X/S. Available for preorder now!</p>
+                        <div class="product-footer">
+                            <span class="product-price">$119.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
                 <div class = "dealCards" data-category="action" data-platform="xbox">
-    <div class="dealImgs img10">
-        <button class="favorite-btn" aria-label="Add to favorites">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-            </svg>
-        </button>
-    </div>
-    <div class="product-info">
-        <h5 class="product-title">Halo Infinite</h5>
-        <p class="product-description">Standard Edition</p>
-        <div class="product-footer">
-            <span class="product-price">$99.99</span>
-            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-        </div>
-    </div>
-</div>
+                    <div class="dealImgs img10">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Halo Infinite</h5>
+                        <p class="product-description">Standard Edition</p>
+                        <div class="product-footer">
+                            <span class="product-price">$99.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
 
-
-
-
-
+<!---Details Page-------------------------------------------->
         <div id="Details" class="page">
-            <div id="detail-image" class="dealImgs"></div>
-            <h1 id="detail-title"></h1>
-            <p id="detail-description"></p>
-            <p id="detail-price"></p>
+            <div class="listView-Detail" id ="DetailGamesPage">
+                <div class="dealCards">
+                    <div class="detailImgs img4"></div>
+                        <div class="product-info">
+                            <h5 class="product-title">Batman: Arkham Knight</h5>
+                            <p class="product-description">The explosive finale to the Arkham trilogy. Batman faces the ultimate threat as Scarecrow returns to unite all of Gotham's criminal masterminds.</p>
+                                <div class="detail-specs">
+                                    <div class="spec-row"><span class="spec-label">Category:</span><span>Adventure</span></div>
+                                    <div class="spec-row"><span class="spec-label">Platform:</span><span>Xbox Series X/S</span></div>
+                                    <div class="spec-row"><span class="spec-label">Release Date:</span><span>June 23, 2015</span></div>
+                                    <div class="spec-row"><span class="spec-label">Rating:</span><span> 4.2 / 5</span></div>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">$25.99</span>
+                                    <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                                    <button class="favorite-btn" aria-label="Add to favorites">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="dealCards">
+                    <div class="detailImgs img9Detail"></div>
+                    <div class="product-info">
+                        <h5 class="product-title">Forza Horizon 6</h5>
+                        <p class="product-description">
+                            The next chapter in the award winning Forza Horizon series. Race across a breathtaking open
+                            world with hundreds of cars and endless events.
+                        </p>
+                        <div class="detail-specs">
+                            <div class="spec-row"><span class="spec-label">Category:</span><span>Racing</span></div>
+                            <div class="spec-row"><span class="spec-label">Platform:</span><span>Xbox, PC</span></div>
+                            <div class="spec-row"><span class="spec-label">Release Date:</span><span>TBA</span></div>
+                            <div class="spec-row">
+                                <span class="spec-label">Rating:</span><span>Not yet rated</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$119.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            <button class="favorite-btn" aria-label="Add to favorites">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="star-icon"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="dealCards">
+                    <div class="detailImgs img5"></div>
+                    <div class="product-info">
+                        <h5 class="product-title">Super Mario Galaxy 1 & 2</h5>
+                        <p class="product-description">
+                            Join Mario on a cosmic adventure across the galaxy. Collect Power Stars and explore
+                            imaginative worlds in this beloved Nintendo classic, now on Switch.
+                        </p>
+                        <div class="detail-specs">
+                            <div class="spec-row"><span class="spec-label">Category:</span><span>Adventure</span></div>
+                            <div class="spec-row">
+                                <span class="spec-label">Platform:</span><span>Nintendo Switch</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Release Date:</span><span>November 16, 2020</span>
+                            </div>
+                            <div class="spec-row"><span class="spec-label">Rating:</span><span>4.5 / 5</span></div>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$89.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            <button class="favorite-btn" aria-label="Add to favorites">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="star-icon"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="dealCards">
+                    <div class="detailImgs img3"></div>
+                    <div class="product-info">
+                        <h5 class="product-title">Hogwarts Legacy</h5>
+                        <p class="product-description">
+                            An immersive open-world action RPG set in the world first introduced in the Harry Potter
+                            books. Experience Hogwarts in the 1800s.
+                        </p>
+                        <div class="detail-specs">
+                            <div class="spec-row"><span class="spec-label">Category:</span><span>RPG</span></div>
+                            <div class="spec-row">
+                                <span class="spec-label">Platform:</span><span>PS5, Switch, PC</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Release Date:</span><span>February 10, 2023</span>
+                            </div>
+                            <div class="spec-row"><span class="spec-label">Rating:</span><span>4.6 / 5</span></div>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$44.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            <button class="favorite-btn" aria-label="Add to favorites">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="star-icon"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
 
         </div>
+
+
+<!---About Page-------------------------------------------->
         <div id="About" class="page">
     <h1>About</h1>
   </div>
+
+
+<!---Wishlist Page-------------------------------------------->
         <div id="Wishlist" class="page">
             <h1>Wishlist</h1>
             <div id="wishlist-items" class="container"></div>
         </div>
+
+
+<!---Cart Page-------------------------------------------->
         <div id="MyCart" class="page">
                 <h2>Your Cart</h2>
 
@@ -331,6 +474,9 @@
             </div>
         </div>
 </div>
+
+
+<!---Checkout Page-------------------------------------------->
         <div id="Checkout" class="page">
 
             <h1>About checkout info</h1>
@@ -364,7 +510,7 @@
         </div>
 
 
-
+<!---Reciept Page-------------------------------------------->
         <div id="Reciept" class = "page">
             <div id="receipt-container">
                 <h1>Success!</h1>

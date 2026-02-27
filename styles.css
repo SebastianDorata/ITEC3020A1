@@ -160,7 +160,6 @@ body{
     padding: 20px;
     gap: 0;
 }
-
 .list-view .dealCards {
     display: flex;
     flex-direction: row;
@@ -169,13 +168,11 @@ body{
     border-radius: 0;
     margin: 0;
 }
-
 .list-view .dealImgs {
     width: 150px;
     min-width: 150px;
     height: 120px;
 }
-
 .list-view .product-info {
     display: flex;
     flex-direction: row;
@@ -184,7 +181,6 @@ body{
     padding: 10px 20px;
     width: 100%;
 }
-
 .list-view .product-footer {
     flex-direction: column;
     align-items: flex-end;
@@ -194,14 +190,10 @@ body{
     background-position: center center;
     background-size: 125%;
 }
-
-
-
 .list-view .dealImgs.img9 {
     background-position: center center;
     background-size: 170%;
 }
-
 #Games{
     position: relative;
     background-image: url(GameImgs/DealsPg.png);
@@ -209,7 +201,6 @@ body{
     background-position: center;
     min-height: 100vh;
 }
-
 #Games *{
     z-index: 1;
     position: relative;
@@ -221,7 +212,6 @@ body{
     z-index: 2;
 }
 /*Product styling*/
-
 .dealCards{
     position: relative;
     background: white;
@@ -419,18 +409,61 @@ body{
     }
 }
 
-
-
-
 /*///////// Detail page/////////// */
-#detail-image {
-    width: 20%;
-    height: 600px;
+.listView-Detail{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.detailImgs{
+    position: relative;
+    border-radius: 15px 15px 0 0;
     background-size: cover;
-    background-position: center;
+    height: clamp(150px, 20vw, 33em);
+
 }
 
+#DetailGamesPage .dealCards {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 0;
+    border: black 2px solid;
+}
 
+#DetailGamesPage .detailImgs {
+    min-width: 300px;
+    height: auto;
+    border-radius: 15px 0 0 15px;
+}
+
+#DetailGamesPage .product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+    gap: 15px;
+}
+
+.img9Detail {
+    background-image: url(/GameImgs/FH6-Detail.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#DetailGamesPage .product-footer {
+    margin-top: 0;
+    border: 2px solid red;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 /*///////// Shopping cart/////////// */
 .cart-container {
     align-self: flex-end;
@@ -595,6 +628,8 @@ body{
     margin-bottom: 20px;
 }
 
+
+/*Spinner */
 .spinner {
     width: 50px;
     height: 50px;
@@ -604,12 +639,10 @@ body{
     animation: spin-loader 1s linear infinite;
     margin: 20px auto;
 }
-
 @keyframes spin-loader {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
 #checkoutLoading {
     text-align: center;
     padding: 50px;
