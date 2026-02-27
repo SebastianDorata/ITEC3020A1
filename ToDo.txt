@@ -1,4 +1,4 @@
-Game detail page
+
 Style all pages.
 
 
