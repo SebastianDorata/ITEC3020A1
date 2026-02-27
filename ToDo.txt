@@ -1,7 +1,7 @@
 Game detail page
 Style all pages.
 
-Add spinner to the checkout page.
+
 Add a cancel & Clear button to the chekout page
 After Item is moved to cart from wishlist. Remove it from wishlist
 After an order is completed, The item needs to be removed from the Wishlist.
