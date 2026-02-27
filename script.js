@@ -392,8 +392,15 @@ function submitCheckout() {
         alert('CVV must be 3 digits.');
         return;
     }
-    showReceipt(email, cardName);
-    //Todo list. Add spinner later.
+    document.getElementById('Checkout-form').style.display = 'none';
+    document.getElementById('checkoutLoading').style.display = 'block';
+
+    setTimeout(() => {
+        showReceipt(email, cardName);
+        document.getElementById('checkoutLoading').style.display = 'none';
+        document.getElementById('Checkout-form').style.display = 'block';
+    },
+        2500);
 }
 
 /////////////////////////////////////////////////////////

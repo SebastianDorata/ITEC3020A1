@@ -354,8 +354,12 @@
             <label for="cvv">CVV:</label>
             <input type="text" id="cvv" placeholder="123" maxlength="3" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                                                                                         <!-- Used to delete user inputs that are not numbers.-->
-            <button type="button" onclick="showPage('Reciept');submitCheckout()">Place Order</button>
+            <button type="button" onclick="submitCheckout()">Place Order</button>
             </form>
+            <div id="checkoutLoading" style="display:none;">
+                <div class="spinner"></div>
+                <p>Processing your order...</p>
+            </div>
 
         </div>
 

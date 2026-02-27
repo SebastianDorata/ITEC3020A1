@@ -8,5 +8,5 @@ After an order is completed, The item needs to be removed from the Wishlist.
 Apply some simple animations to the checkout page for UI/UX
 Order num, date, email, order items, price for each, subtotal, tax, and total price. And a continue to shop button. It should have a nice design for UX.
 Higher marks. Both  types of products displayed on home page. 
-wishlist count badge.
+
 Release date?
