@@ -4,6 +4,8 @@ function showPage(pageId) {
     document.getElementById(pageId).classList.add('active');
 }
 
+
+
 /////////////////////////////////////////////////////////
 // Cart functionality
 
@@ -35,6 +37,9 @@ class Cart {
         const dealImgs = productCard.querySelector('.dealImgs');
         const productImage = dealImgs ? dealImgs.classList[1] : '';
 
+        const detailImgs = productCard.querySelector('.detailImgs');
+        const productDetailImage = detailImgs ? detailImgs.classList[1] : '';
+
 ///////////// Always read fresh from localStorage before modifying//////////////////////////
         this.cart = Cart.getCart();
 
@@ -42,7 +47,8 @@ class Cart {
             title: productTitle,
             price: productPrice,
             description: productDescription,
-            imageClass: productImage
+            imageClass: productImage,
+            detailImageClass: productDetailImage
         };
 
         const existingIndex = this.cart.findIndex(item => item.title === product.title);
@@ -246,7 +252,7 @@ function displayCartItems() {
 
         return `
             <div class="cart-item" data-index="${index}">
-                <div class="dealImgs ${item.imageClass}" style="width:100px; height:100px; border-radius:8px; flex-shrink:0;"></div>
+                <div class="dealImgs detailImgs ${item.detailImageClass || item.imageClass}" style="width:100px; height:100px; border-radius:8px; flex-shrink:0;"></div>
                 <div class="cart-item-content">
                     <h6>${item.title}</h6>
                     <p>${item.description}</p>
