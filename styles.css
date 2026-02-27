@@ -24,7 +24,7 @@ body{
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    background-color: darkgreen;
+    background-color: #161616;
 }
 .navRight{
     display:flex;
@@ -770,5 +770,33 @@ body{
 
 /*///////////// Footer///////////////// */
 footer{
-    margin-top: auto;
+   background: rgb(0, 0, 0); /* Fallback color */
+   background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+   color: #f1f1f1;
+   width: 100%;
+   padding: 20px;
+   margin-top: auto;
+    background-image: url(GameImgs/controller2.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+.contact {
+  margin-top: -200px;
+  margin-left: 900px;
+  background-color: lightgrey;
+  color: black;
+  width: 350px;
+  padding: 5px;
+  border: 15px solid #1DA9C0;
+}
+
+.formm{
+    color: black;
+    font-weight: bold;
+    background-color: lightgrey;
+    border: 15px solid #1DA9C0;
+    width: 350px;
 }
