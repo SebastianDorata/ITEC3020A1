@@ -150,8 +150,8 @@ class Wishlist {
                     <p class="product-description">${item.description}</p>
                     <div class="product-footer">
                         <span class="product-price">${item.price}</span>
-                        <button class="btn btn-primary wishlist-add-to-cart" data-index="${index}">Add to Cart</button>
-                        <button class="btn btn-danger wishlist-remove-btn" data-index="${index}">Remove</button>
+                        <button class="add-to-cart-btn wishlist-add-to-cart" data-index="${index}">Add to Cart</button>
+                        <button class="Wish-remove-btn wishlist-remove-btn" data-index="${index}">Remove</button>
                     </div>
                 </div>
             </div>

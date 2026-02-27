@@ -14,14 +14,10 @@
                 <ul>
                     <li><a href="#" onclick="showPage('Home')">Home</a></li>
                     <li><a href="#" onclick="showPage('Games')">Games</a></li>
-                    <li><a href="#" onclick="showPage('Details')">Details</a></li>
                     <li><a href="#" onclick="showPage('About')">About</a></li>
                     <li><a href="#" onclick="showPage('Wishlist')" class="wishlistBadge">Wishlist
                         <div class="cart-icon-container"><span class="wishlist-badge" style="display:none;">0</span></div>
-
-
-
-                        </a></li>
+                    </a></li>
                 </ul>
             </div>
 
@@ -72,6 +68,9 @@
 <!---Games Page-------------------------------------------->
         <div id="Games" class="page">
 
+
+
+
             <div class="searchBar">
                 <input type="text" id="searchBar" placeholder="Search games...">
             </div>
@@ -103,287 +102,25 @@
                 <button id="view-toggle" onclick="toggleView()">List View</button>
             </div>
             <div  class="grid-view">
-                <div class = "dealCards" data-category="action" data-platform="ps5">
-                    <div class = "dealImgs img1">
-                            <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                                </svg>
-                            </button>
-                    </div>
-                    <div class="product-info">
-                        <h5 class="product-title">Spider-Man 2</h5>
-                        <p class="product-description">Digital Deluxe Edition for PlayStation 5</p>
-                            <div class="product-footer">
-                                <span class="product-price">$39.99</span>
-                                <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                            </div>
-                    </div>
 
-                </div>
-                <div class = "dealCards" data-category="racing" data-platform="switch">
-                    <div class = "dealImgs img2">
+                <div class="dealCards" data-category="rpg" data-platform="ps5,switch,pc">
+                    <div class="dealImgs img3">
                         <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                              <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="star-icon"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                             </svg>
                         </button>
                     </div>
-                    <div class="product-info">
-                        <h5 class="product-title">Mario Kart 8</h5>
-                        <p class="product-description">Nintendo Switch Edition</p>
-                        <div class="product-footer">
-                            <span class="product-price">$69.99</span>
-                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                        </div>
-                    </div>
-
-                </div>
-                <div class = "dealCards" data-category="rpg" data-platform="ps5,switch,pc">
-                    <div class = "dealImgs img3">
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                                </svg>
-                            </button>
-                        </div>
                     <div class="product-info">
                         <h5 class="product-title">Hogwarts Legacy</h5>
                         <p class="product-description">Deluxe Edition</p>
-                        <div class="product-footer">
-                            <span class="product-price">$44.99</span>
-                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                        </div>
-                    </div>
-
-                </div>
-                <div class = "dealCards" data-category="adventure" data-platform="xbox">
-                    <div class="dealImgs img4">
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="product-info">
-                        <h5 class="product-title">Batman: Arkham Knight</h5>
-                        <p class="product-description">Premium Edition for Xbox Series X/S</p>
-                            <div class="product-footer">
-                                <span class="product-price">$25.99</span>
-                                <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                            </div>
-                    </div>
-                </div>
-                <div class = "dealCards" data-category="adventure" data-platform="switch">
-                    <div class="dealImgs img5">
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="product-info">
-                        <h5 class="product-title">Super Mario Galaxy 1 & 2</h5>
-                        <p class="product-description">Deluxe Edition for Nintendo Switch</p>
-                            <div class="product-footer">
-                                <span class="product-price">$89.99</span>
-                                <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                            </div>
-                    </div>
-                </div>
-                <div class = "dealCards" data-category="adventure" data-platform="ps5">
-                    <div class="dealImgs img6">
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                            </svg>
-                        </button>
-                    </div>
-                        <div class="product-info">
-                            <h5 class="product-title">God Of War: Ragnarok</h5>
-                            <p class="product-description">Standard Edition for PlayStation 5</p>
-                                <div class="product-footer">
-                                    <span class="product-price">$120.99</span>
-                                    <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                                </div>
-                        </div>
-                </div>
-                <div class = "dealCards" data-category="action" data-platform="ps5">
-                    <div class="dealImgs img7">
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="product-info">
-                        <h5 class="product-title">Spider-Man: Miles Morales</h5>
-                        <p class="product-description">Standard Edition for PlayStation 5</p>
-                        <div class="product-footer">
-                            <span class="product-price">$79.99</span>
-                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class = "dealCards" data-category="adventure" data-platform="xbox,switch,pc">
-                    <div class="dealImgs img8">
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                        </svg>
-                        </button>
-                    </div>
-                    <div class="product-info">
-                        <h5 class="product-title">Minecraft: Java and Bedrock Edition</h5>
-                        <p class="product-description">Deluxe Collection</p>
-                        <div class="product-footer">
-                            <span class="product-price">$39.99</span>
-                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class = "dealCards" data-category="racing" data-platform="xbox,pc">
-                    <div class="dealImgs img9">
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                        </svg>
-                        </button>
-                    </div>
-                    <div class="product-info">
-                        <h5 class="product-title">Forza Horizon 6</h5>
-                        <p class="product-description">Standard Edition for Xbox Series X/S. Available for preorder now!</p>
-                        <div class="product-footer">
-                            <span class="product-price">$119.99</span>
-                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class = "dealCards" data-category="action" data-platform="xbox">
-                    <div class="dealImgs img10">
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                        </svg>
-                        </button>
-                    </div>
-                    <div class="product-info">
-                        <h5 class="product-title">Halo Infinite</h5>
-                        <p class="product-description">Standard Edition</p>
-                        <div class="product-footer">
-                            <span class="product-price">$99.99</span>
-                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-<!---Details Page-------------------------------------------->
-        <div id="Details" class="page">
-            <div class="listView-Detail" id ="DetailGamesPage">
-                <div class="dealCards">
-                    <div class="detailImgs img4"></div>
-                        <div class="product-info">
-                            <h5 class="product-title">Batman: Arkham Knight</h5>
-                            <p class="product-description">The explosive finale to the Arkham trilogy. Batman faces the ultimate threat as Scarecrow returns to unite all of Gotham's criminal masterminds.</p>
-                                <div class="detail-specs">
-                                    <div class="spec-row"><span class="spec-label">Category:</span><span>Adventure</span></div>
-                                    <div class="spec-row"><span class="spec-label">Platform:</span><span>Xbox Series X/S</span></div>
-                                    <div class="spec-row"><span class="spec-label">Release Date:</span><span>June 23, 2015</span></div>
-                                    <div class="spec-row"><span class="spec-label">Rating:</span><span> 4.2 / 5</span></div>
-                                </div>
-                                <div class="product-footer">
-                                    <span class="product-price">$25.99</span>
-                                    <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                                    <button class="favorite-btn" aria-label="Add to favorites">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="star-icon" viewBox="0 0 16 16">
-                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                        </div>
-                </div>
-
-                <div class="dealCards">
-                    <div class="detailImgs img9Detail"></div>
-                    <div class="product-info">
-                        <h5 class="product-title">Forza Horizon 6</h5>
-                        <p class="product-description">
-                            The next chapter in the award winning Forza Horizon series. Race across a breathtaking open
-                            world with hundreds of cars and endless events.
-                        </p>
-                        <div class="detail-specs">
-                            <div class="spec-row"><span class="spec-label">Category:</span><span>Racing</span></div>
-                            <div class="spec-row"><span class="spec-label">Platform:</span><span>Xbox, PC</span></div>
-                            <div class="spec-row"><span class="spec-label">Release Date:</span><span>TBA</span></div>
-                            <div class="spec-row">
-                                <span class="spec-label">Rating:</span><span>Not yet rated</span>
-                            </div>
-                        </div>
-                        <div class="product-footer">
-                            <span class="product-price">$119.99</span>
-                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                            <button class="favorite-btn" aria-label="Add to favorites">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    fill="currentColor"
-                                    class="star-icon"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="dealCards">
-                    <div class="detailImgs img5"></div>
-                    <div class="product-info">
-                        <h5 class="product-title">Super Mario Galaxy 1 & 2</h5>
-                        <p class="product-description">
-                            Join Mario on a cosmic adventure across the galaxy. Collect Power Stars and explore
-                            imaginative worlds in this beloved Nintendo classic, now on Switch.
-                        </p>
-                        <div class="detail-specs">
-                            <div class="spec-row"><span class="spec-label">Category:</span><span>Adventure</span></div>
-                            <div class="spec-row">
-                                <span class="spec-label">Platform:</span><span>Nintendo Switch</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Release Date:</span><span>November 16, 2020</span>
-                            </div>
-                            <div class="spec-row"><span class="spec-label">Rating:</span><span>4.5 / 5</span></div>
-                        </div>
-                        <div class="product-footer">
-                            <span class="product-price">$89.99</span>
-                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                            <button class="favorite-btn" aria-label="Add to favorites">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    fill="currentColor"
-                                    class="star-icon"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="dealCards">
-                    <div class="detailImgs img3"></div>
-                    <div class="product-info">
-                        <h5 class="product-title">Hogwarts Legacy</h5>
                         <p class="product-description">
                             An immersive open-world action RPG set in the world first introduced in the Harry Potter
                             books. Experience Hogwarts in the 1800s.
@@ -401,30 +138,364 @@
                         <div class="product-footer">
                             <span class="product-price">$44.99</span>
                             <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                            <button class="favorite-btn" aria-label="Add to favorites">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    fill="currentColor"
-                                    class="star-icon"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
-                            </button>
+                            <div class="revButtons"><a href="#" onclick="showPage('HGreviews')">View reviews</a></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="dealCards" data-category="adventure" data-platform="xbox">
+                    <div class="dealImgs img4">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="star-icon"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Batman: Arkham Knight</h5>
+                        <p class="product-description">Premium Edition for Xbox Series X/S</p>
+                        <p class="product-description">
+                            The explosive finale to the Arkham trilogy. Batman faces the ultimate threat as Scarecrow
+                            returns to unite all of Gotham's criminal masterminds.
+                        </p>
+                        <div class="detail-specs">
+                            <div class="spec-row"><span class="spec-label">Category:</span><span>Adventure</span></div>
+                            <div class="spec-row">
+                                <span class="spec-label">Platform:</span><span>Xbox Series X/S</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Release Date:</span><span>June 23, 2015</span>
+                            </div>
+                            <div class="spec-row"><span class="spec-label">Rating:</span><span> 4.2 / 5</span></div>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$25.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            <div class="revButtons"><a href="#" onclick="showPage('BMreviews')">View reviews</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dealCards" data-category="adventure" data-platform="switch">
+                    <div class="dealImgs img5">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="star-icon"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Super Mario Galaxy 1 & 2</h5>
+                        <p class="product-description">Deluxe Edition for Nintendo Switch</p>
+                        <p class="product-description">
+                            Join Mario on a cosmic adventure across the galaxy. Collect Power Stars and explore
+                            imaginative worlds in this beloved Nintendo classic, now on Switch.
+                        </p>
+                        <div class="detail-specs">
+                            <div class="spec-row"><span class="spec-label">Category:</span><span>Adventure</span></div>
+                            <div class="spec-row">
+                                <span class="spec-label">Platform:</span><span>Nintendo Switch</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Release Date:</span><span>November 16, 2020</span>
+                            </div>
+                            <div class="spec-row"><span class="spec-label">Rating:</span><span>4.5 / 5</span></div>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$89.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            <div class="revButtons"><a href="#" onclick="showPage('MGreviews')">View reviews</a></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="dealCards" data-category="racing" data-platform="xbox,pc">
+                    <div class="dealImgs img9">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="star-icon"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Forza Horizon 6</h5>
+                        <p class="product-description">
+                            Standard Edition for Xbox Series X/S.<br />
+                            Available for preorder now!
+                        </p>
+                        <p class="product-description">
+                            The next chapter in the award winning Forza Horizon series. Race across a breathtaking open
+                            world with hundreds of cars and endless events.
+                        </p>
+                        <div class="detail-specs">
+                            <div class="spec-row"><span class="spec-label">Category:</span><span>Racing</span></div>
+                            <div class="spec-row"><span class="spec-label">Platform:</span><span>Xbox, PC</span></div>
+                            <div class="spec-row"><span class="spec-label">Release Date:</span><span>TBA</span></div>
+                            <div class="spec-row">
+                                <span class="spec-label">Rating:</span><span>Not yet rated</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$119.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            <div class="revButtons"><a href="#" onclick="showPage('FHreviews')">View reviews</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dealCards" data-category="action" data-platform="ps5">
+                    <div class="dealImgs img1">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="star-icon"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Spider-Man 2</h5>
+                        <p class="product-description">Digital Deluxe Edition for PlayStation 5</p>
+                        <p class="product-description">
+                            Swing through New York City as both Peter Parker and Miles Morales in this epic adventure.
+                        </p>
+                        <div class="detail-specs">
+                            <div class="spec-row"><span class="spec-label">Category:</span><span>Action</span></div>
+                            <div class="spec-row"><span class="spec-label">Platform:</span><span>PS5</span></div>
+                            <div class="spec-row">
+                                <span class="spec-label">Release Date:</span><span>October 20, 2023</span>
+                            </div>
+                            <div class="spec-row"><span class="spec-label">Rating:</span><span>4.8 / 5</span></div>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$39.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            <div class="revButtons"><a href="#" onclick="showPage('SMreviews')">View reviews</a></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="dealCards" data-category="racing" data-platform="switch">
+                    <div class="dealImgs img2">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="star-icon"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Mario Kart 8 Deluxe</h5>
+                        <p class="product-description">Nintendo Switch Edition + Booster Pass</p>
+                        <p class="product-description">
+                            The ultimate version of the classic racer with 48 tracks and all your favorite characters.
+                        </p>
+                        <div class="detail-specs">
+                            <div class="spec-row"><span class="spec-label">Category:</span><span>Racing</span></div>
+                            <div class="spec-row">
+                                <span class="spec-label">Platform:</span><span>Nintendo Switch</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Release Date:</span><span>April 28, 2017</span>
+                            </div>
+                            <div class="spec-row"><span class="spec-label">Rating:</span><span>4.7 / 5</span></div>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$69.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            <div class="revButtons"><a href="#" onclick="showPage('MKreviews')">View reviews</a></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="dealCards" data-category="adventure" data-platform="ps5">
+                    <div class="dealImgs img6">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="star-icon"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">God of War: Ragnarok</h5>
+                        <p class="product-description">Standard Edition for PlayStation 5</p>
+                        <p class="product-description">
+                            Kratos and Atreus journey through the Nine Realms in search of answers as Asgard prepares
+                            for battle.
+                        </p>
+                        <div class="detail-specs">
+                            <div class="spec-row"><span class="spec-label">Category:</span><span>Adventure</span></div>
+                            <div class="spec-row"><span class="spec-label">Platform:</span><span>PS5</span></div>
+                            <div class="spec-row">
+                                <span class="spec-label">Release Date:</span><span>November 9, 2022</span>
+                            </div>
+                            <div class="spec-row"><span class="spec-label">Rating:</span><span>4.9 / 5</span></div>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$120.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            <div class="revButtons"><a href="#" onclick="showPage('GOWreviews')">View reviews</a></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="dealCards" data-category="action" data-platform="ps5">
+                    <div class="dealImgs img7">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="star-icon"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Spider-Man: Miles Morales</h5>
+                        <p class="product-description">Ultimate Edition for PlayStation 5</p>
+                        <p class="product-description">
+                            Miles discovers new powers and learns what it takes to be his own Spider-Man.
+                        </p>
+                        <div class="detail-specs">
+                            <div class="spec-row"><span class="spec-label">Category:</span><span>Action</span></div>
+                            <div class="spec-row"><span class="spec-label">Platform:</span><span>PS5</span></div>
+                            <div class="spec-row">
+                                <span class="spec-label">Release Date:</span><span>November 12, 2020</span>
+                            </div>
+                            <div class="spec-row"><span class="spec-label">Rating:</span><span>4.7 / 5</span></div>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$79.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            <div class="revButtons"><a href="#" onclick="showPage('MMreviews')">View reviews</a></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="dealCards" data-category="adventure" data-platform="xbox,switch,pc">
+                    <div class="dealImgs img8">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="star-icon"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Minecraft</h5>
+                        <p class="product-description">Java & Bedrock Edition</p>
+                        <p class="product-description">
+                            The ultimate sandbox game. Build, explore, and survive in an endless block world.
+                        </p>
+                        <div class="detail-specs">
+                            <div class="spec-row"><span class="spec-label">Category:</span><span>Adventure</span></div>
+                            <div class="spec-row">
+                                <span class="spec-label">Platform:</span><span>Xbox, Switch, PC</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Release Date:</span><span>November 18, 2011</span>
+                            </div>
+                            <div class="spec-row"><span class="spec-label">Rating:</span><span>4.8 / 5</span></div>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$39.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            <div class="revButtons"><a href="#" onclick="showPage('MCreviews')">View reviews</a></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="dealCards" data-category="action" data-platform="xbox">
+                    <div class="dealImgs img10">
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="star-icon"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Halo Infinite</h5>
+                        <p class="product-description">Campaign Edition</p>
+                        <p class="product-description">
+                            Master Chief returns in the next chapter of the legendary Halo franchise.
+                        </p>
+                        <div class="detail-specs">
+                            <div class="spec-row"><span class="spec-label">Category:</span><span>Action</span></div>
+                            <div class="spec-row">
+                                <span class="spec-label">Platform:</span><span>Xbox Series X/S</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Release Date:</span><span>December 8, 2021</span>
+                            </div>
+                            <div class="spec-row"><span class="spec-label">Rating:</span><span>4.5 / 5</span></div>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$99.99</span>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                            <div class="revButtons"><a href="#" onclick="showPage('HLreviews')">View reviews</a></div>
+
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
         </div>
+
+
+
 
 
 <!---About Page-------------------------------------------->
@@ -533,7 +604,662 @@
 
 
 
+<div id="BMreviews" class="page">
+    <div class="reviews-container">
+        <button class="back-btn" onclick="showPage('Games')">← Back to Games</button>
 
+        <div class="game-header">
+            <h1>Batman: Arkham Knight</h1>
+            <div class="rating-info">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-number">4.2</span>
+                <span class="review-count">(24 reviews)</span>
+            </div>
+        </div>
+
+        <div class="reviews-list">
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>DarkKnightFan</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Best Batman game ever! The combat is smooth and the story is incredible. The Scarecrow sequences are genuinely terrifying and the voice acting is top-notch.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 42 found this helpful</span>
+
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>GothamCitizen</strong>
+                    <span class="badge">Top Contributor</span>
+                </div>
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">Amazing graphics and gameplay. The Batmobile sections could be better though. Still, the main story is engaging and the side missions add hours of content.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 28 found this helpful</span>
+
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>ComicBookNerd</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Perfect ending to the trilogy. The way they handled the Joker's presence is brilliant. A must-play for any Batman fan.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 36 found this helpful</span>
+
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>StealthGamer</strong>
+                    <span class="badge">Top Contributor</span>
+                </div>
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">The predator sections are the best in the series. So many ways to take down enemies. A must-play.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 31 found this helpful</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="FHreviews" class="page">
+    <div class="reviews-container">
+        <button class="back-btn" onclick="showPage('Games')">← Back to Games</button>
+
+        <div class="game-header">
+            <h1>Forza Horizon 6</h1>
+            <div class="rating-info">
+                <span class="stars">★★★★½</span>
+                <span class="rating-number">4.5</span>
+                <span class="review-count">(18 reviews)</span>
+            </div>
+        </div>
+
+        <div class="reviews-list">
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>RacerX</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">Beautiful graphics and great car selection. The new map is massive and the weather effects are stunning.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 31 found this helpful</span>
+
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>SpeedDemon</strong>
+                    <span class="badge">Top Contributor</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Best racing game on the market. The physics are perfect and the online multiplayer is smooth.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 45 found this helpful</span>
+
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>CarEnthusiast</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Amazing sound design and realistic handling. Day one purchase for me.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 27 found this helpful</span>
+
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>DriftKing</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">Great selection of cars and the tuning options are deep. The new track editor is awesome.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 22 found this helpful</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="MGreviews" class="page">
+    <div class="reviews-container">
+        <button class="back-btn" onclick="showPage('Games')">← Back to Games</button>
+
+        <div class="game-header">
+            <h1>Super Mario Galaxy 1 & 2</h1>
+            <div class="rating-info">
+                <span class="stars">★★★★½</span>
+                <span class="rating-number">4.5</span>
+                <span class="review-count">(37 reviews)</span>
+            </div>
+        </div>
+
+        <div class="reviews-list">
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>StarGazer</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">The gravity mechanics are revolutionary! Running upside down and jumping between planets is pure magic. The soundtrack is orchestral perfection.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 47 found this helpful</span>
+
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>PowerStarLover</strong>
+                    <span class="badge">Top Contributor</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Two masterpieces in one package. Yoshi adds a whole new dimension to gameplay. Platforming at its absolute finest!</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 38 found this helpful</span>
+
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>CosmicMario</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">Some of the most creative levels ever made. Motion controls can be a bit finicky but still a masterpiece.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 29 found this helpful</span>
+
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>GalaxyWarrior</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">The Observatory hub world is so charming. Rosalina's story is surprisingly emotional. Essential for any Switch owner.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 33 found this helpful</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="HGreviews" class="page">
+    <div class="reviews-container">
+        <button class="back-btn" onclick="showPage('Games')">← Back to Games</button>
+
+        <div class="game-header">
+            <h1>Hogwarts Legacy</h1>
+            <div class="rating-info">
+                <span class="stars">★★★★½</span>
+                <span class="rating-number">4.6</span>
+                <span class="review-count">(51 reviews)</span>
+            </div>
+        </div>
+
+        <div class="reviews-list">
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>RavenclawWizard</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">The attention to detail in Hogwarts Castle is breathtaking. Finally, the Harry Potter RPG I've dreamed of since childhood!</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 56 found this helpful</span>
+
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>SpellMaster</strong>
+                    <span class="badge">Top Contributor</span>
+                </div>
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">Combat is fantastic and spells feel impactful. Some side quests get repetitive but the main story is engaging.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 43 found this helpful</span>
+
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>HufflepuffGirl</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">The beast taming system is adorable! Flying on my broomstick over the Scottish Highlands is pure magic.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 49 found this helpful</span>
+
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>DarkArtsMaster</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Being able to learn Unforgivable Curses adds a moral dimension. The Sebastian questline is darker than expected.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 52 found this helpful</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="SMreviews" class="page">
+    <div class="reviews-container">
+        <button class="back-btn" onclick="showPage('Games')">← Back to Games</button>
+
+        <div class="game-header">
+            <h1>Spider-Man 2</h1>
+            <div class="rating-info">
+                <span class="stars">★★★★★</span>
+                <span class="rating-number">4.8</span>
+                <span class="review-count">(42 reviews)</span>
+            </div>
+        </div>
+
+        <div class="reviews-list">
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>WebSlinger</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">The best Spider-Man game yet! Switching between Peter and Miles is seamless and the web-swinging has never felt better. The symbiote story is incredibly well done.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 67 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>NYCExplorer</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">New York City has never looked better. The fast travel is instant and the side activities are actually fun. Kraven is a terrifying villain.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 54 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>ComicBookFan</strong>
+                    <span class="badge">Top Contributor</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">They perfectly adapted the Venom storyline. The final act is absolutely epic. Insomniac knows how to tell a Spider-Man story.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 48 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>PeterParkerFan</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">Amazing game overall. Combat is improved and the graphics are stunning. Wish the symbiote powers lasted a bit longer in the story.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 32 found this helpful</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="MKreviews" class="page">
+    <div class="reviews-container">
+        <button class="back-btn" onclick="showPage('Games')">← Back to Games</button>
+
+        <div class="game-header">
+            <h1>Mario Kart 8 Deluxe</h1>
+            <div class="rating-info">
+                <span class="stars">★★★★★</span>
+                <span class="rating-number">4.7</span>
+                <span class="review-count">(56 reviews)</span>
+            </div>
+        </div>
+
+        <div class="reviews-list">
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>RainbowRoadPro</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">The definitive Mario Kart experience. 48 tracks, all the characters, and the Booster Pass adds even more. Anti-gravity racing is a blast!</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 73 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>LuigiFan</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Perfect party game. Easy to pick up, hard to master. Battle mode is finally back and better than ever.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 61 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>KartKing</strong>
+                    <span class="badge">Top Contributor</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">200cc mode is insane! The amount of content is ridiculous. Smart steering helps new players but can be turned off for veterans.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 44 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>MushroomKingdom</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">Great game but item balancing could be better. Getting hit by three blue shells in one race is frustrating. Still the best kart racer out there.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 28 found this helpful</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="GOWreviews" class="page">
+    <div class="reviews-container">
+        <button class="back-btn" onclick="showPage('Games')">← Back to Games</button>
+
+        <div class="game-header">
+            <h1>God of War: Ragnarok</h1>
+            <div class="rating-info">
+                <span class="stars">★★★★★</span>
+                <span class="rating-number">4.9</span>
+                <span class="review-count">(68 reviews)</span>
+            </div>
+        </div>
+
+        <div class="reviews-list">
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>GhostOfSparta</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">A masterpiece from start to finish. The story of Kratos and Atreus is emotional and epic. Combat is refined and every realm is beautiful.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 89 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>NorseSaga</strong>
+                    <span class="badge">Top Contributor</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Santa Monica outdid themselves. The voice acting, graphics, music - everything is perfection. The final battle is worth the journey.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 76 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>LeviathanAxe</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">The way they handle the Norse mythology is incredible. Character development for Kratos is some of the best in gaming.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 52 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>Fimbulwinter</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">Incredible game but some puzzles feel repetitive. The story makes up for any minor flaws. A worthy sequel to the 2018 classic.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 37 found this helpful</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="MMreviews" class="page">
+    <div class="reviews-container">
+        <button class="back-btn" onclick="showPage('Games')">← Back to Games</button>
+
+        <div class="game-header">
+            <h1>Spider-Man: Miles Morales</h1>
+            <div class="rating-info">
+                <span class="stars">★★★★½</span>
+                <span class="rating-number">4.7</span>
+                <span class="review-count">(31 reviews)</span>
+            </div>
+        </div>
+
+        <div class="reviews-list">
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>IntoTheVerse</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Miles' powers are so fun! The venom blast and camouflage add new layers to combat. A perfect holiday-themed Spider-Man story.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 45 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>BrooklynKid</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Shorter than the first game but every moment counts. The soundtrack is amazing and Miles feels unique from Peter.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 38 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>SpiderVerseFan</strong>
+                    <span class="badge">Top Contributor</span>
+                </div>
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">Great introduction to Miles as Spider-Man. The Tinkerer is an interesting villain. Wish it was longer but what's there is fantastic.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 29 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>HarlemHero</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">The attention to Harlem culture is beautiful. Miles' family and friends feel real. The Christmas setting is perfect.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 33 found this helpful</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="MCreviews" class="page">
+    <div class="reviews-container">
+        <button class="back-btn" onclick="showPage('Games')">← Back to Games</button>
+
+        <div class="game-header">
+            <h1>Minecraft</h1>
+            <div class="rating-info">
+                <span class="stars">★★★★★</span>
+                <span class="rating-number">4.8</span>
+                <span class="review-count">(93 reviews)</span>
+            </div>
+        </div>
+
+        <div class="reviews-list">
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>BlockBuilder</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Endless possibilities. Build anything you can imagine. The updates keep adding more content. Best value in gaming.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 112 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>CreeperHunter</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Survival mode is challenging and rewarding. The caves and cliffs update made mining so much better. Java and Bedrock together is perfect.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 87 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>RedstoneEngineer</strong>
+                    <span class="badge">Top Contributor</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Redstone is basically programming in game form. The technical depth is incredible. Play with friends or solo, always something to do.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 64 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>NetherExplorer</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">The Nether update made the dimension actually worth visiting. Mods add infinite replayability. A true classic.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 51 found this helpful</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="HLreviews" class="page">
+    <div class="reviews-container">
+        <button class="back-btn" onclick="showPage('Games')">← Back to Games</button>
+
+        <div class="game-header">
+            <h1>Halo Infinite</h1>
+            <div class="rating-info">
+                <span class="stars">★★★★½</span>
+                <span class="rating-number">4.5</span>
+                <span class="review-count">(27 reviews)</span>
+            </div>
+        </div>
+
+        <div class="reviews-list">
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>MasterChiefFan</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">The grapple shot changes everything! Movement feels so good. The open world sections are a great addition to Halo.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 41 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>UNSCmarine</strong>
+                    <span class="badge">Top Contributor</span>
+                </div>
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">Campaign is fantastic and feels like classic Halo. Multiplayer is free and the gameplay is solid. Needs more maps at launch though.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 35 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>Spartan117</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">The Weapon is a great new AI. The story sets up the future perfectly. Chief feels powerful again.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 29 found this helpful</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewer">
+                    <strong>ZetaHalo</strong>
+                    <span class="badge">Verified Purchase</span>
+                </div>
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">Great gameplay but boss fights can be repetitive. The open world is beautiful but a bit empty. Still the best Halo in years.</p>
+                <div class="review-footer">
+                    <span class="helpful">👍 23 found this helpful</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
