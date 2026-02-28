@@ -175,6 +175,11 @@ class Wishlist {
 
                 showToast(`✓ Added ${item.title} to cart!`);
 
+                // Removes item from wishlist after a customer clicks add to cart
+                this.wishlist.splice(index, 1);
+                localStorage.setItem('wishlist', JSON.stringify(this.wishlist));
+                this.updateWishlistDisplay();
+                updateWishlistCountInHeader();
 
             });
         });
