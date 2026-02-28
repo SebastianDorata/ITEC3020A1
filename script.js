@@ -138,7 +138,7 @@ class Wishlist {
         if (!container) return;
 
         if (this.wishlist.length === 0) {
-            container.innerHTML = '<p>No items in your wishlist yet!</p>';
+            container.innerHTML = '<p style="color: white;">No items in your wishlist yet!</p>';
             return;
         }
 
@@ -313,22 +313,7 @@ function showRemovalConfirmation() {
     showToast('Item removed from cart!', '#dc3545');
 }
 
-// To be sorted out later.
-//
-// Remove comment to have confirmation before going to the checkout page again.
-//
-//
-// Direct page nav to checkout, Alert no longer called.
-//
-//
-//function processCheckout() {
-//    const cartItems = Cart.getCart();
-//    if (cartItems.length === 0) {
-//        alert('Your cart is empty!');
-//        return;
-//    }
-//    alert('Proceeding to checkout! This would integrate with your payment system.');
-//}
+
 
 function clearCart() {
     if (confirm('Are you sure you want to clear your entire cart?')) {
