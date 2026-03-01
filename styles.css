@@ -596,17 +596,14 @@ body{
     font-size: 0.875rem;
 }
 .delete-btn {
-    background: #dc3545;
-    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
     border: none;
-    border-radius: 4px;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 8px;
     cursor: pointer;
-    flex-shrink: 0;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 .delete-btn:hover {
     background: #c82333;
@@ -809,6 +806,14 @@ footer{
     width: 350px;
 }
 
-.page{
-    background-color: goldenrod;
+#About{
+    background-image: url(GameImgs/aboutpage2.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: red;
+}
+
+.add-to-cart-btn{
+    background-color: rgb(46, 125, 50);
 }
