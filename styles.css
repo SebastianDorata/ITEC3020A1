@@ -800,3 +800,15 @@ footer{
     border: 15px solid #1DA9C0;
     width: 350px;
 }
+
+.formabout{
+    color: black;
+    font-weight: bold;
+    background-color: lightgrey;
+    border: 10px solid brown;
+    width: 350px;
+}
+
+.page{
+    background-color: goldenrod;
+}
